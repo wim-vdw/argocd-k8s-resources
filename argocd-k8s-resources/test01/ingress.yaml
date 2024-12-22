@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: bluegreen-production
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - bluegreen-vdww.duckdns.org
+    secretName: bluegreen-vdww-tls-secret
+  rules:
+  - host: bluegreen-vdww.duckdns.org
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: blue-svc
+            port:
+              number: 80

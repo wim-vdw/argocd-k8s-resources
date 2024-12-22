@@ -4,6 +4,7 @@ kind: Kustomization
 resources:
 - blue-app.yaml
 - green-app.yaml
+- ingress.yaml
 
 labels:
 - pairs:
