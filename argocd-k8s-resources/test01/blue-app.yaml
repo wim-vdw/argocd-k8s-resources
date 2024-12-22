@@ -1,0 +1,70 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: blue-config
+data:
+  index.html: |
+    <!doctype html>
+    <html lang="">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width"/>
+        <title>Blue application</title>
+        <style>
+            body {
+                width: 35em;
+                margin: 0 auto;
+                font-family: Tahoma, Verdana, Arial, sans-serif;
+                background-color: blue;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+    <h1 style="text-align: center">Welcome to the Blue Application!</h1>
+    </body>
+    </html>
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blue-dep
+  labels:
+    app: blue-dep
+  annotations:
+    configmap.reloader.stakater.com/reload: "blue-config"
+spec:
+  selector:
+    matchLabels:
+      run: blue-app
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        run: blue-app
+    spec:
+      volumes:
+      - name: app-config
+        configMap:
+          name: blue-config
+      containers:
+      - name: blue-server
+        image: nginx
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - mountPath: /usr/share/nginx/html
+          name: app-config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: blue-svc
+  labels:
+    app: blue-svc
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+  selector:
+    run: blue-app

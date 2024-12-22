@@ -1,0 +1,70 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: green-config
+data:
+  index.html: |
+    <!doctype html>
+    <html lang="">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width"/>
+        <title>Green application</title>
+        <style>
+            body {
+                width: 35em;
+                margin: 0 auto;
+                font-family: Tahoma, Verdana, Arial, sans-serif;
+                background-color: green;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+    <h1 style="text-align: center">Welcome to the Green Application!</h1>
+    </body>
+    </html>
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: green-dep
+  labels:
+    app: green-dep
+  annotations:
+    configmap.reloader.stakater.com/reload: "green-config"
+spec:
+  selector:
+    matchLabels:
+      run: green-app
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        run: green-app
+    spec:
+      volumes:
+      - name: green-config
+        configMap:
+          name: green-config
+      containers:
+      - name: green-server
+        image: nginx
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - mountPath: /usr/share/nginx/html
+          name: green-config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: green-svc
+  labels:
+    app: green-svc
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+  selector:
+    run: green-app
