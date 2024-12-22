@@ -4,3 +4,17 @@ kind: Kustomization
 resources:
 - blue-app.yaml
 - green-app.yaml
+
+labels:
+- pairs:
+    app.kubernetes.io/name: blue-green
+    app.kubernetes.io/instance: blue-green-instance01
+    app.kubernetes.io/version: "1.0.0"
+    app.kubernetes.io/component: website
+    app.kubernetes.io/part-of: blue-green
+
+buildMetadata: [managedByLabel]
+
+images:
+- name: nginx
+  newTag: 1.27.3-alpine-slim
