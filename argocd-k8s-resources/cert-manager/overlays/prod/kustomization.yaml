@@ -3,5 +3,15 @@ kind: Kustomization
 
 namespace: cert-manager
 
-resources:
-- https://github.com/cert-manager/cert-manager/releases/download/v1.17.0/cert-manager.yaml
+helmCharts:
+- name: cert-manager
+  repo: https://charts.jetstack.io
+  version: v1.17.0
+  releaseName: cert-manager
+  namespace: cert-manager
+  valuesInline:
+    crds:
+      enabled: true
+    global:
+      leaderElection:
+        namespace: cert-manager
