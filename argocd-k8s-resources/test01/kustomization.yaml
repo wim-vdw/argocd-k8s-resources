@@ -5,6 +5,7 @@ resources:
 - blue-app.yaml
 - green-app.yaml
 - ingress.yaml
+- cert-manager.yaml
 
 labels:
 - pairs:
