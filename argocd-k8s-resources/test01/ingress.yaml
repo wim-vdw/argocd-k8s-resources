@@ -18,7 +18,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: green-svc
+            name: blue-svc
             port:
               number: 80
 ---
