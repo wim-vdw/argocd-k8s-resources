@@ -19,4 +19,4 @@ buildMetadata: [managedByLabel]
 
 images:
 - name: nginx
-  newTag: 1.27.3-alpine-slim
+  newTag: 1.27.4-alpine-slim
