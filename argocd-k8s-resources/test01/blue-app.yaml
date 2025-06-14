@@ -57,6 +57,8 @@ spec:
           echo "POD IP: $POD_IP"
           echo $POD_IP > /usr/share/nginx/html/ip.txt
           echo "POD IP written to /usr/share/nginx/html/ip.txt"
+          date
+          cat /etc/os-release
         env:
         - name: POD_IP
           valueFrom:
