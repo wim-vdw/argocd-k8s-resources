@@ -53,9 +53,10 @@ spec:
         command:
         - sh
         - -c
-        - 'echo "POD IP: $POD_IP";'
-        - 'echo $POD_IP > /usr/share/nginx/html/ip.txt;'
-        - 'echo "POD IP written to /usr/share/nginx/html/ip.txt"'
+        - |
+          'echo "POD IP: $POD_IP";'
+          'echo $POD_IP > /usr/share/nginx/html/ip.txt;'
+          'echo "POD IP written to /usr/share/nginx/html/ip.txt"'
         env:
         - name: POD_IP
           valueFrom:
