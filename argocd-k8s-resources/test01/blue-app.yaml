@@ -55,8 +55,8 @@ spec:
         - -c
         - |
           date
-          cat /etc/os-release
           echo "POD IP: $POD_IP"
+          exit 1
         env:
         - name: POD_IP
           valueFrom:
