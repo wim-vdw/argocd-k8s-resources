@@ -47,6 +47,18 @@ spec:
       - name: app-config
         configMap:
           name: blue-config
+      initContainers:
+      - name: write-ip
+        image: busybox:1.37.0
+        command:
+        - sh
+        - -c
+        - 'echo "POD IP: $POD_IP"'
+        env:
+        - name: POD_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.podIP
       containers:
       - name: blue-server
         image: nginx
