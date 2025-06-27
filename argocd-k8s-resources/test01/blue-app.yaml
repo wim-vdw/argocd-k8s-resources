@@ -54,6 +54,8 @@ spec:
         - sh
         - -c
         - |
+          echo "Sleep for 30 seconds to allow the pod to be ready"
+          sleep 30
           date
           echo "POD IP: $POD_IP"
           echo "Content of index.html:"
