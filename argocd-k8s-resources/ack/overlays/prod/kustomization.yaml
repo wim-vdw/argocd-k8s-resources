@@ -2,3 +2,10 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 namespace: ack-system
+
+helmCharts:
+- name: ack
+  repo: oci://public.ecr.aws/aws-controllers-k8s/s3-chart
+  version: v1.0.33
+  releaseName: ack
+  namespace: ack-system
