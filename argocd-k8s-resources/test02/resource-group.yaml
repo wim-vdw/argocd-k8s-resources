@@ -5,5 +5,7 @@ metadata:
     testing.upbound.io/example-name: example
   name: rg-test02-ne-crossplane
 spec:
+  providerConfigRef:
+    name: default-azure-provider
   forProvider:
     location: North Europe
