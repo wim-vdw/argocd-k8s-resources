@@ -1,0 +1,8 @@
+apiVersion: azure.crossplane.io/v1alpha3
+kind: ResourceGroup
+metadata:
+  name: rg-test02-ne-crossplane
+spec:
+  location: North Europe
+  providerConfigRef:
+    name: default-azure-provider
