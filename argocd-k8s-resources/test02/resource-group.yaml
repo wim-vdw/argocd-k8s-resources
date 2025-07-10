@@ -7,5 +7,8 @@ metadata:
 spec:
   providerConfigRef:
     name: default-azure-provider
+    tags:
+      environment: development
+      managed-by: crossplane
   forProvider:
     location: North Europe
