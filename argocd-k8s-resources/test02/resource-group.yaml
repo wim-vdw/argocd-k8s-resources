@@ -6,3 +6,13 @@ spec:
   location: North Europe
   providerConfigRef:
     name: default-azure-provider
+---
+apiVersion: azure.upbound.io/v1beta1
+kind: ResourceGroup
+metadata:
+  labels:
+    testing.upbound.io/example-name: example
+  name: rg-test02-ne-crossplane
+spec:
+  forProvider:
+    location: North Europe
