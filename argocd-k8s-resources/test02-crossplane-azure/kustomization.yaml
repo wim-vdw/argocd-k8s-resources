@@ -4,4 +4,4 @@ kind: Kustomization
 resources:
 - provider-config.yaml
 - resource-group.yaml
-- virtual-network.yaml
+#- virtual-network.yaml
