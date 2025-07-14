@@ -1,0 +1,10 @@
+apiVersion: ec2.aws.upbound.io/v1beta1
+kind: VPC
+metadata:
+  name: homelab-crossplane-vpc
+spec:
+  providerConfigRef:
+    name: default-aws-provider
+  forProvider:
+    region: eu-west-1
+    cidrBlock: 10.254.0.0/16
