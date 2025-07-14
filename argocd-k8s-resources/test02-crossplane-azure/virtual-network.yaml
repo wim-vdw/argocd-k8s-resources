@@ -9,7 +9,8 @@ spec:
     addressSpace:
     - 10.252.0.0/16
     location: "North Europe"
-    resourceGroupName: rg-test02-ne-crossplane
+    resourceGroupNameRef:
+        name: rg-test02-ne-crossplane
     tags:
       environment: development
       managed-by: crossplane
