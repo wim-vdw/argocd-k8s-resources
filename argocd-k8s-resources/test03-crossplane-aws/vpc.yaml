@@ -8,3 +8,7 @@ spec:
   forProvider:
     region: eu-west-1
     cidrBlock: 10.254.0.0/16
+    tags:
+      Name: homelab-crossplane-vpc
+      environment: development
+      managed-by: crossplane
