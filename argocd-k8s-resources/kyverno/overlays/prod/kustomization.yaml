@@ -9,3 +9,4 @@ helmCharts:
   version: 3.3.4
   releaseName: kyverno
   namespace: kyverno
+  includeCRDs: true
