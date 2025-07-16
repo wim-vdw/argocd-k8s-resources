@@ -3,10 +3,10 @@ kind: Kustomization
 
 namespace: kyverno
 
-helmCharts:
-- name: kyverno
-  repo: https://kyverno.github.io/kyverno/
-  version: 3.3.4
-  releaseName: kyverno
-  namespace: kyverno
-  includeCRDs: true
+#helmCharts:
+#- name: kyverno
+#  repo: https://kyverno.github.io/kyverno/
+#  version: 3.3.4
+#  releaseName: kyverno
+#  namespace: kyverno
+#  includeCRDs: true
