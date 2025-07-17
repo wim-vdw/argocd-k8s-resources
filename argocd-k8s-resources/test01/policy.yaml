@@ -11,7 +11,7 @@ spec:
           kinds:
           - Pod
     validate:
-      failureAction: Audit
+      failureAction: Enforce
       message: "label 'team' is required"
       pattern:
         metadata:
