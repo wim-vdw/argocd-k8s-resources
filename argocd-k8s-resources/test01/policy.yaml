@@ -10,8 +10,10 @@ spec:
       - resources:
           kinds:
           - Pod
-    mutate:
-      patchStrategicMerge:
+    validate:
+      failureAction: Audit
+      message: "label 'team' is required"
+      pattern:
         metadata:
           labels:
-            team: "AWS-Azure"
+            team: "?*"
