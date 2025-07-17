@@ -1,19 +1,19 @@
 apiVersion: kyverno.io/v1
 kind: Policy
 metadata:
-  name: require-labels
+  name: check-region
 spec:
   rules:
-  - name: check-team
+  - name: check-region
     match:
       any:
       - resources:
           kinds:
-          - Pod
+          - VPC
     validate:
       failureAction: Audit
-      message: "label 'team' is required"
+      message: "region must be eu-west-1"
       pattern:
-        metadata:
-          labels:
-            team: "?*"
+        spec:
+          forProvider:
+            region: "eu-west-1"

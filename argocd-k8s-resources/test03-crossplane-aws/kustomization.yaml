@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
 - provider-config.yaml
 - vpc.yaml
+- policy-check-region.yaml
