@@ -12,6 +12,8 @@ spec:
       apiVersion: azure.upbound.io/v1beta1
       kind: ResourceGroup
       spec:
+        providerConfigRef:
+          name: default-azure-provider
         forProvider:
           location: TO_PATCH # will be overwritten via patch
     patches:
@@ -25,6 +27,8 @@ spec:
       apiVersion: network.azure.upbound.io/v1beta1
       kind: VirtualNetwork
       spec:
+        providerConfigRef:
+          name: default-azure-provider
         forProvider:
           addressSpace: [] # will be overwritten via patch
           location: TO_PATCH # will be overwritten via patch
