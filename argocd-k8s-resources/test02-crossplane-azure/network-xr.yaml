@@ -1,0 +1,9 @@
+apiVersion: platform.wim-vdw.github.io/v1alpha1
+kind: XNetwork
+metadata:
+  name: xnetwork-test
+spec:
+  resourceGroupName: "rg-test02-ne-crossplane-xr"
+  region: "North Europe"
+  networkName: "rg-test02-ne-crossplane-xr"
+  networkAddressSpace: "10.251.0.0/16"

@@ -7,3 +7,4 @@ resources:
 - virtual-network.yaml
 - network-xrd.yaml
 - network-composition.yaml
+- network-xr.yaml
