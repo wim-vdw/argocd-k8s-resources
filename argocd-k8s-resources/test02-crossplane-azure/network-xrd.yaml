@@ -6,7 +6,7 @@ spec:
   group: platform.wim-vdw.github.io
   names:
     kind: XNetwork
-    plural: networks
+    plural: xnetworks
   versions:
   - name: v1alpha1
     served: true
