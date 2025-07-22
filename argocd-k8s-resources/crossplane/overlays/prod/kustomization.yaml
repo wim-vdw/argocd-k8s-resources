@@ -12,3 +12,4 @@ helmCharts:
 
 resources:
 - providers.yaml
+- functions.yaml
