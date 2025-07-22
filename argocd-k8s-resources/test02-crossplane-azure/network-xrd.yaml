@@ -20,8 +20,14 @@ spec:
             properties:
               resourceGroupName:
                 type: string
+              region:
+                type: string
               networkName:
+                type: string
+              networkAddressSpace:
                 type: string
             required:
             - resourceGroupName
+            - region
             - networkName
+            - networkAddressSpace
