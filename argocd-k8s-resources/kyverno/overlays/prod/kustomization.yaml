@@ -3,9 +3,9 @@ kind: Kustomization
 
 namespace: kyverno
 
-#helmCharts:
-#- name: kyverno
-#  repo: https://kyverno.github.io/kyverno/
-#  version: 3.3.4
-#  releaseName: kyverno
-#  namespace: kyverno
+helmCharts:
+- name: kyverno
+  repo: https://kyverno.github.io/kyverno/
+  version: 3.3.4
+  releaseName: kyverno
+  namespace: kyverno
