@@ -16,6 +16,9 @@ spec:
           name: default-azure-provider
         forProvider:
           location: TO_PATCH # will be overwritten via patch
+          tags:
+            environment: development
+            managed-by: crossplane
     patches:
     - fromFieldPath: "spec.resourceGroupName"
       toFieldPath: "metadata.name"
