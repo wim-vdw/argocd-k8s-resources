@@ -43,6 +43,9 @@ spec:
             forProvider:
               addressSpace: [] # will be overwritten via patch
               location: TO_PATCH # will be overwritten via patch
+              tags:
+                environment: development
+                managed-by: crossplane
               resourceGroupNameSelector:
                 matchControllerRef: true
         patches:
