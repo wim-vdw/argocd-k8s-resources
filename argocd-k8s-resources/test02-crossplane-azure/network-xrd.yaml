@@ -1,7 +1,7 @@
 apiVersion: apiextensions.crossplane.io/v1
 kind: CompositeResourceDefinition
 metadata:
-  name: xnetwork.platform.wim-vdw.github.io
+  name: xnetworks.platform.wim-vdw.github.io
 spec:
   group: platform.wim-vdw.github.io
   names:
