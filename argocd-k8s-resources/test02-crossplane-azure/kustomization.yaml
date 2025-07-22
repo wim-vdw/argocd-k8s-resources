@@ -5,3 +5,4 @@ resources:
 - provider-config.yaml
 - resource-group.yaml
 - virtual-network.yaml
+- network-xrd.yaml

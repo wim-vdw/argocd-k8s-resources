@@ -1,0 +1,27 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: CompositeResourceDefinition
+metadata:
+  name: xnetwork.platform.wim-vdw.github.io
+spec:
+  group: platform.wim-vdw.github.io
+  names:
+    kind: XNetwork
+    plural: networks
+  versions:
+  - name: v1alpha1
+    served: true
+    referenceable: true
+    schema:
+      openAPIV3Schema:
+        type: object
+        properties:
+          spec:
+            type: object
+            properties:
+              resourceGroupName:
+                type: string
+              networkName:
+                type: string
+            required:
+            - resourceGroupName
+            - networkName
