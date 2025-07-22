@@ -7,7 +7,7 @@ spec:
     apiVersion: platform.wim-vdw.github.io/v1alpha1
     kind: XNetwork
   resources:
-  - name: TO_PATCH # will be overwritten via patch
+  - name: TO_PATCH_RG_NAME # will be overwritten via patch
     base:
       apiVersion: azure.upbound.io/v1beta1
       kind: ResourceGroup
@@ -20,7 +20,7 @@ spec:
     - fromFieldPath: "spec.region"
       toFieldPath: "spec.forProvider.location"
 
-  - name: TO_PATCH # will be overwritten via patch
+  - name: TO_PATCH_VNET_NAME # will be overwritten via patch
     base:
       apiVersion: network.azure.upbound.io/v1beta1
       kind: VirtualNetwork
