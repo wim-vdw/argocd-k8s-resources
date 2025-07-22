@@ -3,7 +3,7 @@ kind: XNetwork
 metadata:
   name: xnetwork-test
 spec:
-  resourceGroupName: "rg-test02-ne-crossplane-xr"
+  resourceGroupName: "rg-test02-ne-crossplane"
   region: "North Europe"
-  networkName: "vn-test02-crossplane-01-xr"
-  networkAddressSpace: "10.251.0.0/16"
+  networkName: "vn-test02-crossplane-01"
+  networkAddressSpace: "10.252.0.0/16"
