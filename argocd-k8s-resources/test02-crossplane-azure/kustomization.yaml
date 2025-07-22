@@ -6,3 +6,4 @@ resources:
 - resource-group.yaml
 - virtual-network.yaml
 - network-xrd.yaml
+- network-composition.yaml

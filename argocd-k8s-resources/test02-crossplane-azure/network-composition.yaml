@@ -1,0 +1,41 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  name: xnetwork-azure
+spec:
+  compositeTypeRef:
+    apiVersion: platform.wim-vdw.github.io/v1alpha1
+    kind: XNetwork
+  resources:
+  - name: TO_PATCH # will be overwritten via patch
+    base:
+      apiVersion: azure.upbound.io/v1beta1
+      kind: ResourceGroup
+      spec:
+        forProvider:
+          location: TO_PATCH # will be overwritten via patch
+    patches:
+    - fromFieldPath: "spec.resourceGroupName"
+      toFieldPath: "metadata.name"
+    - fromFieldPath: "spec.region"
+      toFieldPath: "spec.forProvider.location"
+
+  - name: TO_PATCH # will be overwritten via patch
+    base:
+      apiVersion: network.azure.upbound.io/v1beta1
+      kind: VirtualNetwork
+      spec:
+        forProvider:
+          addressSpace: [] # will be overwritten via patch
+          location: TO_PATCH # will be overwritten via patch
+          resourceGroupNameSelector:
+            matchControllerRef: true
+      patches:
+      - fromFieldPath: "spec.networkName"
+        toFieldPath: "metadata.name"
+      - fromFieldPath: "spec.region"
+        toFieldPath: "spec.forProvider.location"
+      - fromFieldPath: "spec.networkAddressSpace"
+        toFieldPath: "spec.forProvider.addressSpace[0]"
+      - fromFieldPath: "spec.resourceGroupName"
+        toFieldPath: "spec.forProvider.resourceGroupName"
