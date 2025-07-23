@@ -27,6 +27,7 @@ spec:
               tags:
                 environment: development
                 managed-by: crossplane
+                aaa: bbb
         patches:
         - fromFieldPath: "spec.resourceGroupName"
           toFieldPath: "metadata.name"
