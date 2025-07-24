@@ -1,0 +1,23 @@
+apiVersion: platform.wim-vdw.github.io/v1alpha1
+kind: Network
+metadata:
+  name: my-claimed-network-without-subnet
+spec:
+  resourceGroupName: "rg-test02-ne-crossplane-01"
+  region: "North Europe"
+  networkName: "vn-test02-crossplane-01"
+  networkAddressSpace: "10.252.0.0/16"
+  compositionRef:
+    name: network-composition-without-subnet
+---
+apiVersion: platform.wim-vdw.github.io/v1alpha1
+kind: Network
+metadata:
+  name: my-claimed-network-with-subnet
+spec:
+  resourceGroupName: "rg-test02-ne-crossplane-02"
+  region: "North Europe"
+  networkName: "vn-test02-crossplane-02"
+  networkAddressSpace: "10.252.0.0/16"
+  compositionRef:
+    name: network-composition-with-subnet
