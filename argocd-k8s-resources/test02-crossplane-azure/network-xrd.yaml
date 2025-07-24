@@ -7,6 +7,9 @@ spec:
   names:
     kind: XNetwork
     plural: xnetworks
+  claimNames:
+    kind: Network
+    plural: networks
   versions:
   - name: v1alpha1
     served: true
