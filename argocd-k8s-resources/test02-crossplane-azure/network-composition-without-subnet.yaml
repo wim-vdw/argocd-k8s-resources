@@ -1,0 +1,64 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  name: xnetwork-without-subnet
+spec:
+  compositeTypeRef:
+    apiVersion: platform.wim-vdw.github.io/v1alpha1
+    kind: XNetwork
+  mode: Pipeline
+  pipeline:
+  - step: patch-and-transform
+    functionRef:
+      name: function-patch-and-transform
+    input:
+      apiVersion: pt.fn.crossplane.io/v1beta1
+      kind: Resources
+      resources:
+      - name: resource-group
+        base:
+          apiVersion: azure.upbound.io/v1beta1
+          kind: ResourceGroup
+          metadata:
+            name: TO_PATCH # will be overwritten via patch
+          spec:
+            deletionPolicy: Orphan
+            providerConfigRef:
+              name: default-azure-provider
+            forProvider:
+              location: TO_PATCH # will be overwritten via patch
+              tags:
+                environment: development
+                managed-by: crossplane
+        patches:
+        - fromFieldPath: "spec.resourceGroupName"
+          toFieldPath: "metadata.name"
+        - fromFieldPath: "spec.region"
+          toFieldPath: "spec.forProvider.location"
+
+      - name: virtual-network
+        base:
+          apiVersion: network.azure.upbound.io/v1beta1
+          kind: VirtualNetwork
+          metadata:
+            name: TO_PATCH # will be overwritten via patch
+          spec:
+            providerConfigRef:
+              name: default-azure-provider
+            forProvider:
+              addressSpace: [] # will be overwritten via patch
+              location: TO_PATCH # will be overwritten via patch
+              tags:
+                environment: development
+                managed-by: crossplane
+              resourceGroupNameRef:
+                name: TO_PATCH # will be overwritten via patch
+        patches:
+        - fromFieldPath: "spec.networkName"
+          toFieldPath: "metadata.name"
+        - fromFieldPath: "spec.region"
+          toFieldPath: "spec.forProvider.location"
+        - fromFieldPath: "spec.networkAddressSpace"
+          toFieldPath: "spec.forProvider.addressSpace[0]"
+        - fromFieldPath: "spec.resourceGroupName"
+          toFieldPath: "spec.forProvider.resourceGroupNameRef.name"

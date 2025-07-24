@@ -1,7 +1,7 @@
 apiVersion: apiextensions.crossplane.io/v1
 kind: Composition
 metadata:
-  name: xnetwork-azure
+  name: xnetwork-with-subnet
 spec:
   compositeTypeRef:
     apiVersion: platform.wim-vdw.github.io/v1alpha1
