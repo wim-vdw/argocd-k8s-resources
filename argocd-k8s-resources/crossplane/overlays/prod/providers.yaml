@@ -11,6 +11,13 @@ metadata:
   name: upbound-provider-azure-network
 spec:
   package: xpkg.upbound.io/upbound/provider-azure-network:v1
+---
+apiVersion: pkg.crossplane.io/v1
+kind: Provider
+metadata:
+  name: upbound-provider-family-aws
+spec:
+  package: xpkg.upbound.io/upbound/provider-family-aws:v1
 #---
 #apiVersion: pkg.crossplane.io/v1
 #kind: Provider
@@ -32,10 +39,3 @@ spec:
 #  name: upbound-provider-aws-s3
 #spec:
 #  package: xpkg.upbound.io/upbound/provider-aws-s3:v1
-#---
-#apiVersion: pkg.crossplane.io/v1
-#kind: Provider
-#metadata:
-#  name: upbound-provider-family-aws
-#spec:
-#  package: xpkg.upbound.io/upbound/provider-family-aws:v1
