@@ -15,7 +15,7 @@ spec:
       apiVersion: pt.fn.crossplane.io/v1beta1
       kind: Resources
       resources:
-      - name: TO_PATCH_RG_NAME # will be overwritten via patch
+      - name: resource-group # will be overwritten via patch
         base:
           apiVersion: azure.upbound.io/v1beta1
           kind: ResourceGroup
