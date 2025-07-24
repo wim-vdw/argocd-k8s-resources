@@ -4,5 +4,5 @@ kind: Kustomization
 resources:
 - provider-config.yaml
 - network-xrd.yaml
-- network-composition.yaml
-- network-claim.yaml
+#- network-composition.yaml
+#- network-claim.yaml
