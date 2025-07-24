@@ -8,4 +8,4 @@ spec:
   networkName: "vn-test02-crossplane-01"
   networkAddressSpace: "10.252.0.0/16"
   compositionRef:
-    name: network-composition-without-subnet
+    name: network-composition-with-subnet
