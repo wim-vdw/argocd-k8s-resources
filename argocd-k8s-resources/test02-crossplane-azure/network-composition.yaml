@@ -19,7 +19,10 @@ spec:
         base:
           apiVersion: azure.upbound.io/v1beta1
           kind: ResourceGroup
+          metadata:
+            name: TO_PATCH_RG_NAME # will be overwritten via patch
           spec:
+            deletionPolicy: Orphan
             providerConfigRef:
               name: default-azure-provider
             forProvider:
