@@ -1,8 +1,8 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-#resources:
-#- provider-config.yaml
-#- network-xrd.yaml
-#- network-composition.yaml
-#- network.yaml
+resources:
+- provider-config.yaml
+- network-xrd.yaml
+- network-composition.yaml
+- network-claim.yaml
