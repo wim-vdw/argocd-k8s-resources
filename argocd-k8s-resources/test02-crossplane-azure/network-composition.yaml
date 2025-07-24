@@ -74,6 +74,8 @@ spec:
               name: default-azure-provider
             forProvider:
               addressPrefixes: [] # will be overwritten via patch
+              serviceEndpoints:
+              - Microsoft.Storage
               resourceGroupNameRef:
                 name: TO_PATCH # will be overwritten via patch
               virtualNetworkNameRef:
