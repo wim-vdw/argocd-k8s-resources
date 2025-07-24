@@ -76,6 +76,7 @@ spec:
               addressPrefixes: [] # will be overwritten via patch
               serviceEndpoints:
               - Microsoft.Storage
+              - Microsoft.Sql
               resourceGroupNameRef:
                 name: TO_PATCH # will be overwritten via patch
               virtualNetworkNameRef:
