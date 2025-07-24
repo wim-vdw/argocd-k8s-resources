@@ -62,3 +62,34 @@ spec:
           toFieldPath: "spec.forProvider.addressSpace[0]"
         - fromFieldPath: "spec.resourceGroupName"
           toFieldPath: "spec.forProvider.resourceGroupNameRef.name"
+
+      - name: full-subnet
+        base:
+          apiVersion: network.azure.upbound.io/v1beta1
+          kind: Subnet
+          metadata:
+            name: full-subnet
+          spec:
+            providerConfigRef:
+              name: default-azure-provider
+            forProvider:
+              properties:
+                addressPrefixes: [] # will be overwritten via patch
+              tags:
+                environment: development
+                managed-by: crossplane
+              resourceGroupNameRef:
+                name: TO_PATCH # will be overwritten via patch
+              virtualNetworkNameRef:
+                name: TO_PATCH # will be overwritten via patch
+        patches:
+        - fromFieldPath: "spec.networkName"
+          toFieldPath: "metadata.name"
+        - fromFieldPath: "spec.region"
+          toFieldPath: "spec.forProvider.location"
+        - fromFieldPath: "spec.networkAddressSpace"
+          toFieldPath: "spec.forProvider.properties.addressPrefixes[0]"
+        - fromFieldPath: "spec.resourceGroupName"
+          toFieldPath: "spec.forProvider.resourceGroupNameRef.name"
+        - fromFieldPath: "spec.virtualNetworkName"
+          toFieldPath: "spec.forProvider.virtualNetworkNameRef.name"
