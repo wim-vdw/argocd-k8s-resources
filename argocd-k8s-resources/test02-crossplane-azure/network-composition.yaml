@@ -73,8 +73,7 @@ spec:
             providerConfigRef:
               name: default-azure-provider
             forProvider:
-              properties:
-                addressPrefixes: [] # will be overwritten via patch
+              addressPrefixes: [] # will be overwritten via patch
               tags:
                 environment: development
                 managed-by: crossplane
