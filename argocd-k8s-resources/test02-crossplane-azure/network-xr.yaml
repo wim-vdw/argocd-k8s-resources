@@ -15,5 +15,5 @@ metadata:
 spec:
   resourceGroupName: "rg-test02-ne-crossplane-02"
   region: "North Europe"
-  networkName: "vn-test02-crossplane-02"
+  networkName: "vn-test02-crossplane-01"
   networkAddressSpace: "10.252.0.0/16"
