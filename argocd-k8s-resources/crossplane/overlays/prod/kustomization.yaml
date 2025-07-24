@@ -9,6 +9,7 @@ helmCharts:
   version: v1.20.0
   releaseName: crossplane
   namespace: crossplane-system
+  includeCRDs: true
 
 resources:
 - providers.yaml
