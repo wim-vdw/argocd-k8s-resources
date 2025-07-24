@@ -5,4 +5,4 @@ resources:
 - provider-config.yaml
 - network-xrd.yaml
 - network-composition.yaml
-#- network-xr.yaml
+- network.yaml

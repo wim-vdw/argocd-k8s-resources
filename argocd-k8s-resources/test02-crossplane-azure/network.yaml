@@ -1,7 +1,7 @@
 apiVersion: platform.wim-vdw.github.io/v1alpha1
-kind: XNetwork
+kind: Network
 metadata:
-  name: xnetwork-test
+  name: my-claimed-network
 spec:
   resourceGroupName: "rg-test02-ne-crossplane"
   region: "North Europe"
