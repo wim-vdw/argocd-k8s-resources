@@ -8,7 +8,7 @@ spec:
   networkName: "vn-test02-crossplane-01"
   networkAddressSpace: "10.252.0.0/16"
   compositionRef:
-    name: network-composition-without-subnet
+    name: xnetwork-without-subnet
 ---
 apiVersion: platform.wim-vdw.github.io/v1alpha1
 kind: Network
@@ -20,4 +20,4 @@ spec:
   networkName: "vn-test02-crossplane-02"
   networkAddressSpace: "10.252.0.0/16"
   compositionRef:
-    name: network-composition-with-subnet
+    name: xnetwork-with-subnet
