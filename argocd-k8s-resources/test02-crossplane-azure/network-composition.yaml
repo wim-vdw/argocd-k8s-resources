@@ -83,10 +83,6 @@ spec:
               virtualNetworkNameRef:
                 name: TO_PATCH # will be overwritten via patch
         patches:
-        - fromFieldPath: "spec.networkName"
-          toFieldPath: "metadata.name"
-        - fromFieldPath: "spec.region"
-          toFieldPath: "spec.forProvider.location"
         - fromFieldPath: "spec.networkAddressSpace"
           toFieldPath: "spec.forProvider.properties.addressPrefixes[0]"
         - fromFieldPath: "spec.resourceGroupName"
