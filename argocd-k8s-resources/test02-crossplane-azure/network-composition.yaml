@@ -22,7 +22,7 @@ spec:
           metadata:
             name: TO_PATCH_RG_NAME # will be overwritten via patch
           spec:
-            deletionPolicy: Orphan
+            deletionPolicy: Delete
             providerConfigRef:
               name: default-azure-provider
             forProvider:
