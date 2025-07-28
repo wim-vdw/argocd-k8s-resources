@@ -6,4 +6,4 @@ resources:
 - network-xrd.yaml
 - network-composition-with-subnet.yaml
 - network-composition-without-subnet.yaml
-#- network-claims.yaml
+- network-claims.yaml
