@@ -54,7 +54,13 @@ spec:
               resourceGroupNameRef:
                 name: TO_PATCH # will be overwritten via patch
         patches:
-        - fromFieldPath: "spec.networkName"
+        - type: CombineFromComposite
+          combine:
+            variables:
+            - fromFieldPath: "spec.networkName"
+            strategy: string
+            string:
+              fmt: "vn-crossplane-%s"
           toFieldPath: "metadata.name"
         - fromFieldPath: "spec.region"
           toFieldPath: "spec.forProvider.location"
