@@ -46,7 +46,7 @@ spec:
             providerConfigRef:
               name: default-azure-provider
             forProvider:
-              addressSpace: [] # will be overwritten via patch
+              addressSpace: [ ] # will be overwritten via patch
               location: TO_PATCH # will be overwritten via patch
               tags:
                 environment: development
@@ -54,7 +54,13 @@ spec:
               resourceGroupNameRef:
                 name: TO_PATCH # will be overwritten via patch
         patches:
-        - fromFieldPath: "spec.networkName"
+        - type: CombineFromComposite
+          combine:
+            variables:
+            - fromFieldPath: "spec.networkName"
+            strategy: string
+            string:
+              fmt: "vn-crossplane-%s"
           toFieldPath: "metadata.name"
         - fromFieldPath: "spec.region"
           toFieldPath: "spec.forProvider.location"
@@ -73,7 +79,7 @@ spec:
             providerConfigRef:
               name: default-azure-provider
             forProvider:
-              addressPrefixes: [] # will be overwritten via patch
+              addressPrefixes: [ ] # will be overwritten via patch
               serviceEndpoints:
               - Microsoft.Storage
               - Microsoft.Sql
