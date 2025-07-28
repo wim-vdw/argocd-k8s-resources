@@ -46,7 +46,7 @@ spec:
             providerConfigRef:
               name: default-azure-provider
             forProvider:
-              addressSpace: [] # will be overwritten via patch
+              addressSpace: [ ] # will be overwritten via patch
               location: TO_PATCH # will be overwritten via patch
               tags:
                 environment: development
