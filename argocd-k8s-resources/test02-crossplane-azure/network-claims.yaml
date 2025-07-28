@@ -5,7 +5,7 @@ metadata:
 spec:
   resourceGroupName: "rg-test02-ne-crossplane-01"
   region: "North Europe"
-  networkName: "vn-test02-crossplane-01"
+  networkName: "test01"
   networkAddressSpace: "10.252.0.0/16"
   compositionRef:
     name: xnetwork-without-subnet
@@ -17,7 +17,7 @@ metadata:
 spec:
   resourceGroupName: "rg-test02-ne-crossplane-02"
   region: "North Europe"
-  networkName: "vn-test02-crossplane-02"
+  networkName: "test02"
   networkAddressSpace: "10.252.0.0/16"
   compositionRef:
     name: xnetwork-with-subnet
