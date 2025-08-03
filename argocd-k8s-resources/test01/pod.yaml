@@ -21,7 +21,7 @@ subjects:
   name: namespace-reader-sa
   namespace: test01
 roleRef:
-  kind: ClusterRole
+  kind: Role
   name: namespace-reader
   apiGroup: rbac.authorization.k8s.io
 ---
