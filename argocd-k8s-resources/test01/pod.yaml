@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: test
 spec:
+  restartPolicy: Never
   containers:
   - name: test-container
     image: wimvandenwyngaert/k8s-version-checker:1.0.2
