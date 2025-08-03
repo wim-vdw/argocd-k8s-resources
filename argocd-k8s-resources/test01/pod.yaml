@@ -4,7 +4,7 @@ metadata:
   name: namespace-reader-sa
 ---
 apiVersion: rbac.authorization.k8s.io/v1
-kind: CRole
+kind: Role
 metadata:
   name: namespace-reader
 rules:
