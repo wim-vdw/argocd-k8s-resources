@@ -19,6 +19,8 @@ metadata:
 subjects:
 - kind: ServiceAccount
   name: namespace-reader-sa
+  namespace: test01
+  apiGroup: ""
 roleRef:
   kind: ClusterRole
   name: namespace-reader
