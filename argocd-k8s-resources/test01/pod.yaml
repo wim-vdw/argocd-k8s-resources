@@ -4,7 +4,7 @@ metadata:
   name: namespace-reader-sa
 ---
 apiVersion: rbac.authorization.k8s.io/v1
-kind: Role
+kind: ClusterRole
 metadata:
   name: namespace-reader
 rules:
@@ -13,15 +13,16 @@ rules:
   verbs: ["get", "list"]
 ---
 apiVersion: rbac.authorization.k8s.io/v1
-kind: RoleBinding
+kind: ClusterRoleBinding
 metadata:
   name: read-namespaces
 subjects:
 - kind: ServiceAccount
   name: namespace-reader-sa
   namespace: test01
+  apiGroup: ""
 roleRef:
-  kind: Role
+  kind: ClusterRole
   name: namespace-reader
   apiGroup: rbac.authorization.k8s.io
 ---
