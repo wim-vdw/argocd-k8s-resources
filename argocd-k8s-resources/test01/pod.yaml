@@ -1,29 +1,29 @@
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: namespace-reader-sa
+  name: cluster-reader-sa
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: namespace-reader
+  name: cluster-reader
 rules:
 - apiGroups: [""]
-  resources: ["namespaces"]
+  resources: ["namespaces", "nodes"]
   verbs: ["list"]
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: read-namespaces
+  name: read-cluster-resources
 subjects:
 - kind: ServiceAccount
-  name: namespace-reader-sa
+  name: cluster-reader-sa
   namespace: test01
   apiGroup: ""
 roleRef:
   kind: ClusterRole
-  name: namespace-reader
+  name: cluster-reader
   apiGroup: rbac.authorization.k8s.io
 ---
 apiVersion: v1
@@ -31,7 +31,7 @@ kind: Pod
 metadata:
   name: k8s-cluster-info
 spec:
-  serviceAccountName: namespace-reader-sa
+  serviceAccountName: cluster-reader-sa
   restartPolicy: Never
   containers:
   - name: k8s-cluster-info
