@@ -29,10 +29,10 @@ roleRef:
 apiVersion: v1
 kind: Pod
 metadata:
-  name: test
+  name: k8s-cluster-info
 spec:
   serviceAccountName: namespace-reader-sa
   restartPolicy: Never
   containers:
-  - name: test-container
-    image: wimvandenwyngaert/k8s-version-checker:1.0.3
+  - name: k8s-cluster-info
+    image: wimvandenwyngaert/k8s-cluster-info:1.0.0
