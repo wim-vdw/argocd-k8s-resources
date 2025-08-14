@@ -40,4 +40,7 @@ spec:
           restartPolicy: OnFailure
           containers:
           - name: k8s-cluster-info
-            image: wimvandenwyngaert/k8s-cluster-info:1.0.2
+            image: wimvandenwyngaert/k8s-cluster-info:1.0.4
+            args:
+            - -show-nodes
+            - -show-namespaces
