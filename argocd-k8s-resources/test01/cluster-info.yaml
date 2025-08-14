@@ -36,3 +36,19 @@ spec:
   containers:
   - name: k8s-cluster-info
     image: wimvandenwyngaert/k8s-cluster-info:1.0.2
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: hourly-cluster-info
+spec:
+  schedule: "0 * * * *"  # runs every hour
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          serviceAccountName: cluster-reader-sa
+          restartPolicy: OnFailure
+          containers:
+          - name: k8s-cluster-info
+            image: wimvandenwyngaert/k8s-cluster-info:1.0.2
