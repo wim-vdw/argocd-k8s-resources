@@ -31,7 +31,7 @@ kind: CronJob
 metadata:
   name: hourly-cluster-info
 spec:
-  schedule: "0 * * * *"  # runs every hour
+  schedule: "0 * * * *" # runs every hour
   jobTemplate:
     spec:
       template:
