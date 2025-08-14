@@ -26,17 +26,6 @@ roleRef:
   name: cluster-reader
   apiGroup: rbac.authorization.k8s.io
 ---
-apiVersion: v1
-kind: Pod
-metadata:
-  name: k8s-cluster-info
-spec:
-  serviceAccountName: cluster-reader-sa
-  restartPolicy: Never
-  containers:
-  - name: k8s-cluster-info
-    image: wimvandenwyngaert/k8s-cluster-info:1.0.2
----
 apiVersion: batch/v1
 kind: CronJob
 metadata:
