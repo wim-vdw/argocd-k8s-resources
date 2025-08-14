@@ -44,3 +44,6 @@ spec:
             args:
             - -show-nodes
             - -show-namespaces
+            env:
+            - name: TZ
+              value: Europe/Brussels
