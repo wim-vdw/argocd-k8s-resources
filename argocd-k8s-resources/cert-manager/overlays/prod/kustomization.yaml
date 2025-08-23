@@ -17,4 +17,4 @@ helmCharts:
         namespace: cert-manager
     config:
       featureGates:
-        ACMEHTTP01IngressPathTypeExact: false
+        ACMEHTTP01IngressPathTypeExact: false # https://cert-manager.io/docs/releases/release-notes/release-notes-1.18/#bug-or-regression-2
