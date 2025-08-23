@@ -33,9 +33,3 @@ spec:
     - http01:
         ingress:
           ingressClassName: nginx
-          ingressTemplate:
-            spec:
-              rules:
-              - http:
-                  paths:
-                  - pathType: ImplementationSpecific
