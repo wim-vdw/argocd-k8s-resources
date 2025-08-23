@@ -29,7 +29,7 @@ roleRef:
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: hourly-cluster-info
+  name: cluster-info
 spec:
   schedule: "*/5 * * * *" # runs every 5 minutes
   jobTemplate:
