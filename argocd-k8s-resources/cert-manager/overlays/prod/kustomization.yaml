@@ -16,4 +16,5 @@ helmCharts:
       leaderElection:
         namespace: cert-manager
     config:
-      ACMEHTTP01IngressPathTypeExact: false
+      featureGates:
+        ACMEHTTP01IngressPathTypeExact: false
