@@ -6,6 +6,6 @@ namespace: tailscale
 helmCharts:
 - name: tailscale-operator
   repo: https://pkgs.tailscale.com/helmcharts
-  version: 1.84.3
+  version: 1.86.5
   releaseName: tailscale
   namespace: tailscale
