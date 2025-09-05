@@ -12,7 +12,7 @@ helmCharts:
   includeCRDs: true
   valuesInline:
     githubConfigUrl: "https://github.com/wim-vdw"
-    githubConfigSecret: my-github-pat-token
+    githubConfigSecret: "my-github-pat-token"
     controllerServiceAccount:
       name: actions-runner-controller-gha-rs-controller
       namespace: arc-systems
