@@ -12,3 +12,6 @@ helmCharts:
   includeCRDs: true
   valuesInline:
     githubConfigUrl: "https://github.com/wim-vdw"
+    controllerServiceAccount:
+      name: actions-runner-controller-gha-rs-controller
+      namespace: arc-systems
