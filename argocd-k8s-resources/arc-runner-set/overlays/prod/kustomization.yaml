@@ -1,12 +1,12 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-namespace: arc-systems
+namespace: arc-runners
 
 helmCharts:
-- name: gha-runner-scale-set-controller
+- name: gha-runner-scale-set
   repo: oci://ghcr.io/actions/actions-runner-controller-charts
   version: 0.12.1
-  releaseName: actions-runner-controller
-  namespace: arc-systems
+  releaseName: arc-runner-set
+  namespace: arc-runners
   includeCRDs: true
