@@ -10,3 +10,5 @@ helmCharts:
   releaseName: arc-runner-set
   namespace: arc-runners
   includeCRDs: true
+  valuesInline:
+    githubConfigUrl: "https://github.com/wim-vdw"
