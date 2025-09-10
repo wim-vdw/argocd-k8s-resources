@@ -1,3 +1,4 @@
+# Server plan to upgrade K3s control plane nodes.
 apiVersion: upgrade.cattle.io/v1
 kind: Plan
 metadata:
