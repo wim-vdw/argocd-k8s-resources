@@ -1,5 +1,6 @@
 # Agent plan to upgrade K3s worker nodes.
-# The prepare step will cause upgrade jobs for the plan to wait for the server-plan to complete before they execute.
+# Server nodes should always be upgraded before agent nodes.
+# The prepare step will cause upgrade jobs to wait for the server-plan to complete before they execute.
 apiVersion: upgrade.cattle.io/v1
 kind: Plan
 metadata:
