@@ -3,4 +3,5 @@ githubConfigSecret: "my-github-pat-token"
 controllerServiceAccount:
   name: actions-runner-controller-gha-rs-controller
   namespace: arc-systems
-minRunners: 5
+minRunners: 1
+maxRunners: 5
