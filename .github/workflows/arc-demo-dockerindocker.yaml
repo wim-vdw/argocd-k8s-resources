@@ -11,5 +11,10 @@ jobs:
     - name: Create a simple Dockerfile
       run: |
         echo "FROM alpine:latest" > Dockerfile
+        echo "CMD [\"echo\", \"Hello from Docker!\"]" >> Dockerfile
     - name: Display Dockerfile contents
       run: cat Dockerfile
+    - name: Build Docker image
+      run: docker build -t demo-image .
+    - name: Run Docker container
+      run: docker run --rm demo-image
