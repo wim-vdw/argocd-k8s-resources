@@ -8,3 +8,8 @@ jobs:
     steps:
     - name: Show Docker version
       run: docker version
+    - name: Create a simple Dockerfile
+      run: |
+        echo "FROM alpine:latest" > Dockerfile
+    - name: Display Dockerfile contents
+      run: cat Dockerfile
