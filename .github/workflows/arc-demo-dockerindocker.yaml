@@ -1,4 +1,4 @@
-name: Actions Runner Controller Demo Docker in Docker
+name: ARC Demo Docker in Docker
 on:
   workflow_dispatch:
 
