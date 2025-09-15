@@ -7,3 +7,4 @@ jobs:
     runs-on: arc-runner-set1
     steps:
     - run: echo "🎉 This job runs on a runner scale set in my Kubernetes cluster!"
+    - run: docker ps -a
