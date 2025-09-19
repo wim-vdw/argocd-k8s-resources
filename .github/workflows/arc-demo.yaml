@@ -3,7 +3,29 @@ on:
   workflow_dispatch:
 
 jobs:
-  Explore-GitHub-Actions:
+  job1:
     runs-on: arc-runner-set1
     steps:
-    - run: echo "🎉 This job runs on a runner scale set in my Kubernetes cluster!"
+    - name: Run a one-liner script for job1
+      run: |
+        echo "🎉 This job runs on a runner scale set in my Kubernetes cluster!"
+        exit 0
+
+  job2:
+    runs-on: arc-runner-set1 for job2
+    steps:
+    - name: Run a one-liner script
+      run: |
+        echo "🎉 This job runs on a runner scale set in my Kubernetes cluster!"
+        exit 1
+
+  job3:
+    needs:
+    - job1
+    - job2
+    if: ${{ always() }}
+    runs-on: arc-runner-set1
+    steps:
+    - name: Run a one-liner script for job3
+      run: |
+        echo "🎉 This job runs on a runner scale set in my Kubernetes cluster!"
