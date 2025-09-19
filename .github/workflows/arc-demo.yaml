@@ -6,7 +6,7 @@ jobs:
   job1:
     runs-on: arc-runner-set1
     steps:
-    - name: Run a one-liner script for job1
+    - name: Run a one-liner script for job1 with success
       run: |
         echo "🎉 This job runs on a runner scale set in my Kubernetes cluster!"
     - name: List files in the workspace
@@ -19,7 +19,7 @@ jobs:
   job2:
     runs-on: arc-runner-set1
     steps:
-    - name: Run a one-liner script for job2
+    - name: Run a one-liner script for job2 with failure
       run: |
         echo "🎉 This job runs on a runner scale set in my Kubernetes cluster!"
         exit 1
