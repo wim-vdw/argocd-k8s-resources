@@ -9,7 +9,12 @@ jobs:
     - name: Run a one-liner script for job1
       run: |
         echo "🎉 This job runs on a runner scale set in my Kubernetes cluster!"
-        exit 0
+    - name: List files in the workspace
+      run: ls -ltr
+    - name: Check out repository code
+      uses: actions/checkout@v5
+    - name: List files in the workspace
+      run: ls -ltr
 
   job2:
     runs-on: arc-runner-set1 for job2
