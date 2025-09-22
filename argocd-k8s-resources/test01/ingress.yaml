@@ -25,7 +25,7 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: argocd-server-http-ingress
+  name: bluegreen-production-tailscale
   namespace: argocd
   annotations:
     tailscale.com/funnel: "true"
