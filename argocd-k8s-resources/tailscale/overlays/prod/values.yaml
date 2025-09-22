@@ -1,2 +1,7 @@
 operatorConfig:
   hostname: "tailscale-operator-raspberrypi"
+oauthSecretVolume:
+  nfs:
+    server: 192.168.1.5
+    path: /mnt/nfsshare/tailscale
+    readOnly: true
