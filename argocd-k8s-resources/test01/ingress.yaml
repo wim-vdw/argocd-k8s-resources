@@ -25,6 +25,29 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
+  name: argocd-server-http-ingress
+  namespace: argocd
+  annotations:
+    tailscale.com/funnel: "true"
+spec:
+  ingressClassName: tailscale
+  rules:
+  - http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: blue-svc
+            port:
+              number: 80
+  tls:
+  - hosts:
+    - bluegreen
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
   name: blue
 spec:
   ingressClassName: nginx
