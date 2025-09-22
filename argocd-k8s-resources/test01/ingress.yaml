@@ -42,7 +42,7 @@ spec:
               number: 80
   tls:
   - hosts:
-    - bluegreen
+    - bluegreen-raspberrypi
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
