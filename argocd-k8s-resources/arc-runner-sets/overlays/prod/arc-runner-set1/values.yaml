@@ -1,4 +1,4 @@
-githubConfigUrl: "https://github.com/wim-vdw"
+githubConfigUrl: "https://github.com/wim-vdw/argocd-k8s-resources"
 githubConfigSecret: "my-github-pat-token"
 controllerServiceAccount:
   name: actions-runner-controller-gha-rs-controller
