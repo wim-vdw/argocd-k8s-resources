@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
 - arc-runner-set1
 - arc-runner-set2-dockerindocker
+- arc-runner-set3-kubernetes-client-go-tests

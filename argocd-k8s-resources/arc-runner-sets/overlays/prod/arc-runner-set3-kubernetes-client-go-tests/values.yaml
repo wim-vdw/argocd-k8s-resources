@@ -1,0 +1,7 @@
+githubConfigUrl: "https://github.com/wim-vdw/arc-runner-set1-kubernetes-client-go-tests"
+githubConfigSecret: "my-github-pat-token"
+controllerServiceAccount:
+  name: actions-runner-controller-gha-rs-controller
+  namespace: arc-systems
+minRunners: 1
+maxRunners: 5
