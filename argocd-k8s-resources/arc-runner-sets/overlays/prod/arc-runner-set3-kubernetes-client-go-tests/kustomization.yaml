@@ -7,7 +7,7 @@ helmCharts:
 - name: gha-runner-scale-set
   repo: oci://ghcr.io/actions/actions-runner-controller-charts
   version: 0.12.1
-  releaseName: arc-runner-set1-kubernetes-client-go-tests
+  releaseName: arc-runner-set3-kubernetes-client-go-tests
   namespace: arc-runners
   includeCRDs: true
   valuesFile: values.yaml
