@@ -1,6 +1,28 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
+  name: bluegreen-production-tailscale
+  annotations:
+    tailscale.com/funnel: "true"
+spec:
+  ingressClassName: tailscale
+  rules:
+  - http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: green-svc
+            port:
+              number: 80
+  tls:
+  - hosts:
+    - bluegreen-raspberrypi
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
   name: bluegreen-production
   annotations:
     cert-manager.io/issuer: letsencrypt-prod
@@ -21,28 +43,6 @@ spec:
             name: blue-svc
             port:
               number: 80
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: bluegreen-production-tailscale
-  annotations:
-    tailscale.com/funnel: "true"
-spec:
-  ingressClassName: tailscale
-  rules:
-  - http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: green-svc
-            port:
-              number: 80
-  tls:
-  - hosts:
-    - bluegreen-raspberrypi
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
