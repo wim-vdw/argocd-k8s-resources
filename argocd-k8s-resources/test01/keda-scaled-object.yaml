@@ -5,7 +5,7 @@ metadata:
 spec:
   scaleTargetRef:
     name: blue-dep
-  minReplicaCount: 3
+  minReplicaCount: 1
   cooldownPeriod: 300
   triggers:
   - type: cron
