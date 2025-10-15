@@ -6,6 +6,6 @@ namespace: kyverno
 helmCharts:
 - name: kyverno
   repo: https://kyverno.github.io/kyverno/
-  version: 3.5.1
+  version: 3.5.2
   releaseName: kyverno
   namespace: kyverno
