@@ -6,6 +6,6 @@ namespace: keda
 helmCharts:
 - name: keda
   repo: https://kedacore.github.io/charts
-  version: 2.18.0
+  version: 2.18.1
   releaseName: keda
   namespace: keda
