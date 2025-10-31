@@ -69,6 +69,9 @@ spec:
       containers:
       - name: blue-server
         image: nginx
+        env:
+        - name: TZ
+          value: Europe/Brussels
         ports:
         - containerPort: 80
         volumeMounts:
