@@ -21,4 +21,4 @@ buildMetadata: [managedByLabel]
 
 images:
 - name: nginx
-  newTag: 1.29.3-alpine-slim
+  newTag: 1.29.3-alpine
