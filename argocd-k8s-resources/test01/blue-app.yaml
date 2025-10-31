@@ -100,9 +100,7 @@ spec:
           value: Europe/Brussels
         ports:
         - containerPort: 80
-        volumeMounts:
-        - mountPath: /usr/share/nginx/html
-          name: app-config
+
 ---
 apiVersion: v1
 kind: Service
