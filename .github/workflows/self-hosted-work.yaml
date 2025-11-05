@@ -1,4 +1,4 @@
-name: iOS Build
+name: Test self-hosted runners Windows
 
 on:
   workflow_dispatch:
