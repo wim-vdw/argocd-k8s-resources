@@ -14,7 +14,6 @@ jobs:
     - name: Get host info
       run: |
         uname -a
-        cat /etc/os-release
 
 #    - name: Set up Ruby (for fastlane)
 #      uses: ruby/setup-ruby@v1
@@ -25,3 +24,13 @@ jobs:
 #      run: |
 #        gem install bundler
 #        bundle install
+  build2:
+    runs-on:  macos-13
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Get host info
+      run: |
+        uname -a
