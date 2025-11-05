@@ -1,0 +1,27 @@
+name: iOS Build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  job1:
+    runs-on: self-hosted
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Get info
+      run: |
+        pwd
+
+  job2:
+    runs-on: self-hosted
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Get info
+      run: |
+        pwd
