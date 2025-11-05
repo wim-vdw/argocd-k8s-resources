@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  build-macos-latest:
     runs-on: macos-latest
 
     steps:
@@ -24,8 +24,8 @@ jobs:
 #      run: |
 #        gem install bundler
 #        bundle install
-  build2:
-    runs-on:  macos-13
+  build-macos-15:
+    runs-on: macos-15
 
     steps:
     - name: Checkout code
