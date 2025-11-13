@@ -11,3 +11,14 @@ parameters:
   fsType: "ext4"
 reclaimPolicy: Delete
 ---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: longhorn-pvc
+spec:
+  accessModes:
+  - ReadWriteOnce
+  storageClassName: longhorn-test
+  resources:
+    requests:
+      storage: 10Mi
