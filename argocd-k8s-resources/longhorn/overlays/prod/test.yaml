@@ -22,3 +22,27 @@ spec:
   resources:
     requests:
       storage: 10Mi
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: volume-test
+spec:
+  containers:
+  - name: volume-test
+    image: wimvandenwyngaert/test:2.4
+    env:
+    - name: TZ
+      value: Europe/Brussels
+    command:
+    - sh
+    - -c
+    - echo 'Welcome Wim' && sleep infinity
+    imagePullPolicy: IfNotPresent
+    volumeMounts:
+    - name: longhorn-volume
+      mountPath: /data
+  volumes:
+  - name: longhorn-volume
+    persistentVolumeClaim:
+      claimName: longhorn-pvc
