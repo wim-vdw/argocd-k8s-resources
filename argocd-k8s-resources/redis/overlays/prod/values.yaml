@@ -1,0 +1,10 @@
+global:
+  defaultStorageClass: "longhorn-test"
+
+master:
+  persistence:
+    size: 200Mi
+
+replica:
+  persistence:
+    size: 100Mi
