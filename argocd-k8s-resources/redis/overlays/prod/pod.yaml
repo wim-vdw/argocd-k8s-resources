@@ -22,7 +22,7 @@ spec:
     - echo 'Welcome Wim' && pip install redis && sleep infinity
     volumeMounts:
     - name: script-volume
-      mountPath: /
+      mountPath: /app
     imagePullPolicy: IfNotPresent
   volumes:
   - name: script-volume
