@@ -3,6 +3,9 @@ kind: Kustomization
 
 namespace: redis
 
+resources:
+- namespace.yaml
+
 helmCharts:
 - name: redis
   repo: https://charts.bitnami.com/bitnami
