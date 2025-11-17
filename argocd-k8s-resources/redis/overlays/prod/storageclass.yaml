@@ -2,6 +2,8 @@ kind: StorageClass
 apiVersion: storage.k8s.io/v1
 metadata:
   name: longhorn-redis
+  annotations:
+    argocd.argoproj.io/hook: PreSync
 provisioner: driver.longhorn.io
 allowVolumeExpansion: true
 parameters:
