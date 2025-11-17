@@ -4,6 +4,7 @@ metadata:
   name: test
   annotations:
     argocd.argoproj.io/sync-wave: "10"
+    configmap.reloader.stakater.com/reload: "redis-python-script"
 spec:
   containers:
   - name: test

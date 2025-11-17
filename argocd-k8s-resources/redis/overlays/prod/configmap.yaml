@@ -6,6 +6,13 @@ metadata:
     argocd.argoproj.io/sync-wave: "5"
 data:
   main.py: |
+    import os
     import redis
     
-    print("Hello from ConfigMap!")
+    r = redis.Redis(host='redis-master',
+                    port=6379,
+                    db=0,
+                    password=os.getenv('REDIS_PASSWORD'),
+                    decode_responses=True)
+    name = r.get('name')
+    print(f'Name: {name}')
