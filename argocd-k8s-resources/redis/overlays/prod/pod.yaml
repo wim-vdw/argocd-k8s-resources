@@ -14,5 +14,5 @@ spec:
     command:
     - sh
     - -c
-    - echo 'Welcome Wim' && sleep infinity
+    - echo 'Welcome Wim' && pip install redis && sleep infinity
     imagePullPolicy: IfNotPresent
