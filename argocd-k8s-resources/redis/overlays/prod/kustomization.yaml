@@ -6,6 +6,7 @@ namespace: redis
 resources:
 - namespace.yaml
 - storageclass.yaml
+- sealedsecrets.yaml
 
 helmCharts:
 - name: redis
