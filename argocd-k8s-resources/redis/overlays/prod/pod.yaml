@@ -11,6 +11,11 @@ spec:
     env:
     - name: TZ
       value: Europe/Brussels
+    - name: REDIS_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          name: my-redis
+          key: redispassword
     command:
     - sh
     - -c
