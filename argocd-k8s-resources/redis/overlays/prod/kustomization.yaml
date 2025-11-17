@@ -5,15 +5,3 @@ namespace: redis
 
 resources:
 - namespace.yaml
-- storageclass.yaml
-- sealedsecrets.yaml
-- pod.yaml
-
-helmCharts:
-- name: redis
-  repo: https://charts.bitnami.com/bitnami
-  version: 23.2.12
-  releaseName: redis
-  namespace: redis
-  includeCRDs: true
-  valuesFile: values.yaml
