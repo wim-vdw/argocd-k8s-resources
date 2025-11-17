@@ -10,5 +10,6 @@ replica:
     size: 100Mi
 
 auth:
+  sentinel: false
   existingSecret: my-redis
   existingSecretPasswordKey: redis-password
