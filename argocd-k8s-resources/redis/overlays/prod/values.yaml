@@ -8,3 +8,7 @@ master:
 replica:
   persistence:
     size: 100Mi
+
+auth:
+  existingSecret: my-redis
+  existingSecretPasswordKey: redis-password
