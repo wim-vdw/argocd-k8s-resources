@@ -1,5 +1,5 @@
 global:
-  defaultStorageClass: "longhorn-test"
+  defaultStorageClass: "longhorn-redis"
 
 master:
   persistence:
