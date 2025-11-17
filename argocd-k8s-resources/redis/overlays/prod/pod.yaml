@@ -20,4 +20,11 @@ spec:
     - sh
     - -c
     - echo 'Welcome Wim' && pip install redis && sleep infinity
+    volumeMounts:
+    - name: script-volume
+      mountPath: /
     imagePullPolicy: IfNotPresent
+  volumes:
+  - name: script-volume
+    configMap:
+      name: redis-python-script
