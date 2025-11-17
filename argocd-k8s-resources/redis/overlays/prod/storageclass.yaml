@@ -3,7 +3,7 @@ apiVersion: storage.k8s.io/v1
 metadata:
   name: longhorn-redis
   annotations:
-    argocd.argoproj.io/hook: PreSync
+    argocd.argoproj.io/sync-wave: "-10"
 provisioner: driver.longhorn.io
 allowVolumeExpansion: true
 parameters:

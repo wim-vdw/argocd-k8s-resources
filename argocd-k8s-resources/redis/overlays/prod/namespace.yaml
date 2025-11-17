@@ -3,4 +3,4 @@ kind: Namespace
 metadata:
   name: redis
   annotations:
-    argocd.argoproj.io/hook: PreSync
+    argocd.argoproj.io/sync-wave: "-10"
