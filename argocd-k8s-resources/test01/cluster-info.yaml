@@ -31,7 +31,7 @@ kind: CronJob
 metadata:
   name: cluster-info
 spec:
-  schedule: "*/5 * * * *" # runs every 5 minutes
+  schedule: "0 2 * * *" # runs daily at 02:00 AM
   jobTemplate:
     spec:
       template:
