@@ -1,3 +1,5 @@
 prometheusOperator:
+  tls:
+    enabled: false
   admissionWebhooks:
-    enabled: true
+    enabled: false
