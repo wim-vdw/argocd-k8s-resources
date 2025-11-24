@@ -3,13 +3,13 @@ kind: Kustomization
 
 namespace: crossplane-system
 
-#helmCharts:
-#- name: crossplane
-#  repo: https://charts.crossplane.io/stable
-#  version: v1.20.0
-#  releaseName: crossplane
-#  namespace: crossplane-system
-#  includeCRDs: true
+helmCharts:
+- name: crossplane
+  repo: https://charts.crossplane.io/stable
+  version: 2.1.1
+  releaseName: crossplane
+  namespace: crossplane-system
+  includeCRDs: true
 
 resources:
 - namespace.yaml
