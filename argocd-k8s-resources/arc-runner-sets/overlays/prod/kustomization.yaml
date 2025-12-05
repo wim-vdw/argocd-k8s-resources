@@ -6,3 +6,4 @@ resources:
 - arc-runner-set1
 - arc-runner-set2-dockerindocker
 - arc-runner-set3-kubernetes-client-go-tests
+- arc-runner-set4-gh-actions-npm-cache-test
