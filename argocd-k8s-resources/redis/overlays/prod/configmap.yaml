@@ -20,7 +20,7 @@ data:
                                 password=os.getenv('REDIS_PASSWORD'),
                                 decode_responses=True)
     
-    # Try reading from Redis replica.
+    # Try reading from Redis replica
     name = redis_replica.get('name')
     if name:
         print(f'Cache hit: {name}')
