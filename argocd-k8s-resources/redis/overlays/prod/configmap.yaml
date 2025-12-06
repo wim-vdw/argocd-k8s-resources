@@ -9,10 +9,23 @@ data:
     import os
     import redis
     
-    r = redis.Redis(host='redis-replicas',
-                    port=6379,
-                    db=0,
-                    password=os.getenv('REDIS_PASSWORD'),
-                    decode_responses=True)
-    name = r.get('name')
-    print(f'Name: {name}')
+    redis_master = redis.Redis(host='redis-master',
+                               port=6379,
+                               db=0,
+                               password=os.getenv('REDIS_PASSWORD'),
+                               decode_responses=True)
+    redis_replica = redis.Redis(host='redis-replicas',
+                                port=6379,
+                                db=0,
+                                password=os.getenv('REDIS_PASSWORD'),
+                                decode_responses=True)
+    
+    # Try reading from Redis replica.
+    name = redis_replica.get('name')
+    if name:
+        print(f'Cache hit: {name}')
+    else:
+       # Store in cache (write to master).
+       name = 'Wim Van den Wyngaert'
+       redis_master.setex('name', 300, name) # TTL 5 min
+       print(f'Cache updated with: {name}')
