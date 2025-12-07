@@ -8,6 +8,7 @@ data:
   main.py: |
     import os
     import redis
+    import sys
     
     redis_master = redis.Redis(host='redis-master',
                                port=6379,
@@ -20,12 +21,16 @@ data:
                                 password=os.getenv('REDIS_PASSWORD'),
                                 decode_responses=True)
     
-    # Try reading from Redis replica.
-    name = redis_replica.get('name')
-    if name:
-        print(f'Cache hit: {name}')
-    else:
-       # Store in cache (write to master).
-       name = 'Wim Van den Wyngaert'
-       redis_master.setex('name', 300, name) # TTL 5 min
-       print(f'Cache updated withs: {name}')
+    try:
+        # Try reading from Redis replica.
+        name = redis_replica.get('name')
+        if name:
+            print(f'Cache hit: {name}')
+        else:
+            # Store in cache (write to master).
+            name = 'Wim Van den Wyngaert'
+            redis_master.setex('name', 300, name)  # TTL 5 min
+            print(f'Cache updated with: {name}')
+    except redis.exceptions.ConnectionError as error:
+        print('Error: ', error)
+        sys.exit(1)
