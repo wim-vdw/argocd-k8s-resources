@@ -28,4 +28,4 @@ data:
        # Store in cache (write to master).
        name = 'Wim Van den Wyngaert'
        redis_master.setex('name', 300, name) # TTL 5 min
-       print(f'Cache updated with: {name}')
+       print(f'Cache updated withs: {name}')
