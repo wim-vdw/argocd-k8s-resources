@@ -19,7 +19,7 @@ spec:
     command:
     - sh
     - -c
-    - echo 'Welcome Wim' && pip install redis && sleep infinity
+    - echo 'Welcome Wim' && pip install redis && python /app/main.py
     volumeMounts:
     - name: script-volume
       mountPath: /app
