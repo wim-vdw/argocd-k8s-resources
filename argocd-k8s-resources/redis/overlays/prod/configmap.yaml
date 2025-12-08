@@ -46,12 +46,12 @@ data:
             # Try reading from Redis replica.
             name = redis_replica.get('name')
             if name:
-                logger.info(f'Cache hit: {name}')
+                logger.info(f'Cache hit => {name}')
+                logger.warning('{{fff{{::::Cache hit => {name}::::}}fff}}')
             else:
                 # Store in cache (write to master).
                 name = 'Wim Van den Wyngaert'
                 redis_master.setex('name', 300, name)  # TTL 5 min
-                logger.info(f'Cache updated with: {name}')
+                logger.warning(f'Cache updated with => {name}')
         except redis.exceptions.ConnectionError as error:
-            logger.error( error)
-            sys.exit(1)
+            logger.error(error)
