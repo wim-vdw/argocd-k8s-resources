@@ -11,6 +11,7 @@ data:
     import os
     import redis
     import sys
+    import time
     from datetime import datetime
     
     class JsonFormatter(logging.Formatter):
@@ -41,15 +42,17 @@ data:
                                     password=os.getenv('REDIS_PASSWORD'),
                                     decode_responses=True)
         
-        try:
-            # Try reading from Redis replica.
-            name = redis_replica.get('name')
-            if name:
-                logger.info(f'Cache hit => {name}')
-            else:
-                # Store in cache (write to master).
-                name = 'Wim Van den Wyngaert'
-                redis_master.setex('name', 300, name)  # TTL 5 min
-                logger.warning(f'Cache updated with => {name}')
-        except redis.exceptions.ConnectionError as error:
-            logger.error(error)
+        while True:
+            try:
+                # Try reading from Redis replica.
+                name = redis_replica.get('name')
+                if name:
+                    logger.info(f'Cache hit => {name}')
+                else:
+                    # Store in cache (write to master).
+                    name = 'Wim Van den Wyngaert'
+                    redis_master.setex('name', 300, name)  # TTL 5 min
+                    logger.warning(f'Cache updated with => {name}')
+            except redis.exceptions.ConnectionError as error:
+                logger.error(error)
+            time.sleep(10)
