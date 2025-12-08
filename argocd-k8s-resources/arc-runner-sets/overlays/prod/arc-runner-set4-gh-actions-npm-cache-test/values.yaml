@@ -3,7 +3,7 @@ githubConfigSecret: "my-github-pat-token"
 controllerServiceAccount:
   name: actions-runner-controller-gha-rs-controller
   namespace: arc-systems
-minRunners: 1
+minRunners: 5
 maxRunners: 5
 containerMode:
   type: "kubernetes-novolume"
