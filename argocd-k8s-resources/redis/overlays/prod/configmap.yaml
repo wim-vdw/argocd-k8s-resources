@@ -22,7 +22,7 @@ data:
                 "message": record.getMessage(),
             }
 
-            return json.dumps(log_record)
+            return json.dumps(log_record, ensure_ascii=False)
     
     if __name__ == '__main__':
         logger = logging.getLogger()
