@@ -23,8 +23,12 @@ spec:
     volumeMounts:
     - name: script-volume
       mountPath: /app
+    - name: cache-volume
+      mountPath: /cache
     imagePullPolicy: IfNotPresent
   volumes:
   - name: script-volume
     configMap:
       name: redis-python-script
+  - name: cache-volume
+    emptyDir: {}
