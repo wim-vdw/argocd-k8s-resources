@@ -31,4 +31,5 @@ spec:
     configMap:
       name: redis-python-script
   - name: cache-volume
-    emptyDir: {}
+    emptyDir:
+      sizeLimit: 1Mi
