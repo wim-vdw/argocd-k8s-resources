@@ -5,3 +5,5 @@ controllerServiceAccount:
   namespace: arc-systems
 minRunners: 0
 maxRunners: 5
+containerMode:
+  type: "kubernetes-novolume"
