@@ -6,7 +6,6 @@ metadata:
     tailscale.com/expose: "true"
 spec:
   type: LoadBalancer
-  loadBalancerClass: tailscale
   selector:
     app.kubernetes.io/component: master
     app.kubernetes.io/instance: redis
