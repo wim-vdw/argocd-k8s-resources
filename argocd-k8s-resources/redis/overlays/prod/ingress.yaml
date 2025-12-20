@@ -1,21 +1,15 @@
-apiVersion: networking.k8s.io/v1
-kind: Ingress
+apiVersion: v1
+kind: Service
 metadata:
-  name: argocd-server-http-ingress-tailscale
+  name: redis-master
   annotations:
-    tailscale.com/funnel: "false"
+    tailscale.com/expose: "true"
 spec:
-  ingressClassName: tailscale
-  rules:
-  - http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: redis-master
-            port:
-              number: 6379
-  tls:
-  - hosts:
-    - redis-master
+  type: LoadBalancer
+  selector:
+    app: redis
+  ports:
+  - name: redis
+    port: 6379
+    targetPort: 6379
+    protocol: TCP
