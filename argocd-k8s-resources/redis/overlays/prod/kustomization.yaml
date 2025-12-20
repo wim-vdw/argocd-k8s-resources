@@ -9,7 +9,6 @@ resources:
 - sealedsecrets.yaml
 - configmap.yaml
 - pod.yaml
-- loadbalancer.yaml
 
 helmCharts:
 - name: redis
@@ -19,3 +18,15 @@ helmCharts:
   namespace: redis
   includeCRDs: true
   valuesFile: values.yaml
+
+patches:
+- target:
+    kind: Service
+    name: redis-master
+  patch: |-
+    - op: add
+      path: /metadata/annotations
+      value: {}
+    - op: add
+      path: /metadata/annotations/tailscale.com~1expose
+      value: "true"
