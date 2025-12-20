@@ -30,3 +30,13 @@ patches:
     - op: add
       path: /metadata/annotations/tailscale.com~1expose
       value: "true"
+- target:
+    kind: Service
+    name: redis-replicas
+  patch: |-
+    - op: add
+      path: /metadata/annotations
+      value: {}
+    - op: add
+      path: /metadata/annotations/tailscale.com~1expose
+      value: "true"
