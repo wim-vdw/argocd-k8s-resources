@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-deployment
+  annotations:
+    argocd.argoproj.io/sync-wave: "10"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: test
+  template:
+    metadata:
+      labels:
+        app: test
+    spec:
+      containers:
+      - name: test-redis-python
+        image: python:3.14-alpine
+        env:
+        - name: TZ
+          value: Europe/Brussels
+        - name: REDIS_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: my-redis
+              key: redis-password
+        command:
+        - sh
+        - -c
+        - echo 'Install Python dependencies:' && pip install redis && python /app/main.py
+        volumeMounts:
+        - name: script-volume
+          mountPath: /app
+        - name: cache-volume
+          mountPath: /cache
+        imagePullPolicy: IfNotPresent
+      volumes:
+      - name: script-volume
+        configMap:
+          name: redis-python-script
+      - name: cache-volume
+        emptyDir:
+          sizeLimit: 1Mi

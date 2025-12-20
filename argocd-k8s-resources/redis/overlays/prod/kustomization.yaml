@@ -8,7 +8,7 @@ resources:
 - storageclass.yaml
 - sealedsecrets.yaml
 - configmap.yaml
-- pod.yaml
+- deployment.yaml
 
 helmCharts:
 - name: redis
