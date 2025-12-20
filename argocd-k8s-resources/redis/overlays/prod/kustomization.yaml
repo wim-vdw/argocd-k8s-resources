@@ -20,16 +20,19 @@ helmCharts:
   valuesFile: values.yaml
 
 patches:
-# JSON patch example
+# Annotate Service to be exposed via Tailscale
 - target:
     version: v1
     kind: Service
     name: redis-master
   patch: |-
-    - op: add
-      path: /metadata/annotations/tailscale.com~1expose
-      value: "true"
-# Strategic merge patch example
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: redis-master
+      annotations:
+        tailscale.com/expose: "true"
+# Annotate Service to be exposed via Tailscale
 - target:
     version: v1
     kind: Service
