@@ -9,7 +9,7 @@ resources:
 - sealedsecrets.yaml
 - configmap.yaml
 - pod.yaml
-- ingress.yaml
+- loadbalancer.yaml
 
 helmCharts:
 - name: redis
