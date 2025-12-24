@@ -9,7 +9,7 @@ resources:
 - green-app.yaml
 - ingress.yaml
 #- cert-manager-issuers.yaml
-#- keda-scaled-object.yaml
+- keda-scaled-object.yaml
 - cluster-info.yaml
 
 labels:
