@@ -3,6 +3,9 @@ kind: Kustomization
 
 namespace: keda
 
+resources:
+- namespace.yaml
+
 helmCharts:
 - name: keda
   repo: https://kedacore.github.io/charts
