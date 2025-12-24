@@ -6,9 +6,9 @@ kind: Kustomization
 resources:
 - namespace.yaml
 
-#helmCharts:
-#- name: keda
-#  repo: https://kedacore.github.io/charts
-#  version: 2.18.3
-#  releaseName: keda
-#  namespace: keda
+helmCharts:
+- name: keda
+  repo: https://kedacore.github.io/charts
+  version: 2.18.3
+  releaseName: keda
+  namespace: keda
