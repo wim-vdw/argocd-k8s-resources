@@ -11,5 +11,5 @@ replica:
 
 auth:
   sentinel: false
-  existingSecret: my-redis
+  existingSecret: my-redis-secret
   existingSecretPasswordKey: redis-password
