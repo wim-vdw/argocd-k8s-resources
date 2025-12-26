@@ -23,7 +23,7 @@ spec:
         - name: REDIS_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: my-redis
+              name: my-redis-secret
               key: redis-password
         command:
         - sh
