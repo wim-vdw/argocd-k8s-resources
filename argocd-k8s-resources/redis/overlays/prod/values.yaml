@@ -3,7 +3,7 @@ global:
 
 master:
   persistence:
-    size: 200Mi
+    size: 100Mi
 
 replica:
   persistence:
