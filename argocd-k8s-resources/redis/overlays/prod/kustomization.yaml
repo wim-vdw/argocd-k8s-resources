@@ -6,7 +6,7 @@ namespace: redis
 resources:
 - namespace.yaml
 - storageclass.yaml
-- sealedsecrets.yaml
+- sealedsecret.yaml
 - configmap.yaml
 - deployment.yaml
 
