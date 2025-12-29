@@ -6,3 +6,11 @@ namespace: monitoring
 resources:
 - namespace.yaml
 - storageclass.yaml
+
+helmCharts:
+- name: grafana/loki
+  repo: https://grafana.github.io/helm-charts
+  version: 6.49.0
+  releaseName: monitoring
+  namespace: monitoring
+  valuesFile: loki-values.yaml
