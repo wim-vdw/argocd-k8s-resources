@@ -10,7 +10,7 @@ clusterEvents:
   enabled: true
   collector: alloy-logs
   namespaces:
-  - monitoring
+  - argocd
 
 nodeLogs:
   enabled: false
@@ -23,7 +23,7 @@ podLogs:
   structuredMetadata:
     pod: pod  # Set structured metadata "pod" from label "pod"
   namespaces:
-  - monitoring
+  - argocd
 
 # Collectors
 alloy-singleton:
