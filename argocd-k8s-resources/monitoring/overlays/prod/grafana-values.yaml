@@ -23,7 +23,7 @@ datasources:
       type: loki
       access: proxy
       orgId: 1
-      url: http://loki-gateway.meta.svc.cluster.local:80
+      url: http://loki-gateway.monitoring.svc.cluster.local:80
       basicAuth: false
       isDefault: false
       version: 1
