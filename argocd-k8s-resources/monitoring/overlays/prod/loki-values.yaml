@@ -49,6 +49,12 @@ singleBinary:
     value: 1750MiB
 
 chunksCache:
+  allocatedMemory: 512
+  resources:
+    limits:
+      memory: 768Mi
+    requests:
+      memory: 512Mi
   # default is 500MB, with limited memory keep this smaller
   writebackSizeLimit: 10MB
 
