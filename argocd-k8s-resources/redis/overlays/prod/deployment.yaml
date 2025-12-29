@@ -13,6 +13,7 @@ spec:
     metadata:
       labels:
         app: test
+        app.kubernetes.io/name: redis-test-app
     spec:
       containers:
       - name: test-redis-python
