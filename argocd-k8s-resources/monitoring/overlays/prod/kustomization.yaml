@@ -27,4 +27,5 @@ helmCharts:
   version: 3.7.1
   releaseName: k8s-monitoring
   namespace: monitoring
+  includeCRDs: true
   valuesFile: k8s-monitoring-values.yaml
