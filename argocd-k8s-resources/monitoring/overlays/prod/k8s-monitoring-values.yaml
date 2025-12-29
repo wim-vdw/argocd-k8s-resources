@@ -11,6 +11,8 @@ clusterEvents:
   collector: alloy-logs
   namespaces:
   - argocd
+  - redis
+  - test01
 
 nodeLogs:
   enabled: false
@@ -24,6 +26,8 @@ podLogs:
     pod: pod  # Set structured metadata "pod" from label "pod"
   namespaces:
   - argocd
+  - redis
+  - test01
 
 # Collectors
 alloy-singleton:
