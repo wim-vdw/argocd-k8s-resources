@@ -4,6 +4,7 @@ metadata:
   name: monitoring-grafana-http-ingress-tailscale
   annotations:
     tailscale.com/funnel: "false"
+    argocd.argoproj.io/sync-wave: "10"
 spec:
   ingressClassName: tailscale
   rules:
