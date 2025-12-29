@@ -8,7 +8,7 @@ resources:
 - storageclass.yaml
 
 helmCharts:
-- name: grafana/loki
+- name: loki
   repo: https://grafana.github.io/helm-charts
   version: 6.49.0
   releaseName: monitoring
