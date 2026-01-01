@@ -87,7 +87,7 @@ queryScheduler:
 distributor:
   replicas: 0
 compactor:
-  replicas: 0
+  retention_enabled: true
 indexGateway:
   replicas: 0
 bloomCompactor:
