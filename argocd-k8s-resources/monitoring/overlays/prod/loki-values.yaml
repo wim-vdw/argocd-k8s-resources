@@ -13,6 +13,9 @@ loki:
         period: 24h
   ingester:
     chunk_encoding: snappy
+    chunk_idle_period: 30m
+    chunk_retain_period: 30m
+    max_chunk_age: 2h
   tracing:
     enabled: true
   pattern_ingester:
