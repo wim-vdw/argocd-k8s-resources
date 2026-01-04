@@ -5,7 +5,7 @@ config:
         Path /var/log/containers/*.log
         multiline.parser docker, cri
         Tag kube.*
-        Mem_Buf_Limit 5MB
+        Mem_Buf_Limit 1MB
         Skip_Long_Lines On
 
   filters: |
