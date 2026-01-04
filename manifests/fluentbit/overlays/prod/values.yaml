@@ -1,17 +1,3 @@
-resources:
-  limits:
-    memory: 100Mi
-    cpu: 100m
-  requests:
-    memory: 50Mi
-    cpu: 50m
-
-env:
-- name: FLB_JEMALLOC
-  value: "off"
-
-image: fluent/fluent-bit:4.2.2-arm64
-
 config:
   inputs: |
     [INPUT]
