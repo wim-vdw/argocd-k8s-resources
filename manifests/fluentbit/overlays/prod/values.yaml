@@ -1,5 +1,6 @@
-nodeSelector:
-  kubernetes.io/arch: arm64
+env:
+- name: FLB_MEM_ALLOC
+  value: "system"
 
 config:
   inputs: |
