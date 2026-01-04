@@ -1,28 +1,32 @@
-config:
-  inputs: |
-    [INPUT]
-        Name tail
-        Path /var/log/containers/*.log
-        multiline.parser docker, cri
-        Tag kube.*
-        Mem_Buf_Limit 5MB
-        Skip_Long_Lines On
+# values.yaml voor fluentd helm chart
+fileConfigs:
+  01_sources.conf: |
+    <source>
+      @type tail
+      path /var/log/containers/*.log
+      pos_file /var/log/fluentd-containers.log.pos
+      tag kube.*
+      read_from_head true
+      <parse>
+        @type cri
+      </parse>
+    </source>
 
-  filters: |
-    [FILTER]
-        Name kubernetes
-        Match kube.*
-        Merge_Log On
-        Keep_Log Off
-        K8S-Logging.Parser On
-        K8S-Logging.Exclude On
+  02_filters.conf: |
+    <filter kube.**>
+      @type kubernetes_metadata
+      @id filter_kube_metadata
+    </filter>
 
-    [FILTER]
-        Name grep
-        Match kube.*
-        Regex kubernetes\.namespace_name ^(argocd)$
+    <filter kube.**>
+      @type grep
+      <regexp>
+        key $.kubernetes.namespace_name
+        pattern /^(argocd)$/
+      </regexp>
+    </filter>
 
-  outputs: |
-    [OUTPUT]
-        Name stdout
-        Match kube.*
+  03_outputs.conf: |
+    <match kube.**>
+      @type stdout
+    </match>
