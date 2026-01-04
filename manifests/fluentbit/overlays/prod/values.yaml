@@ -1,6 +1,6 @@
-env:
-- name: FLB_MEM_ALLOC
-  value: "system"
+image:
+  repository: fluent/fluent-bit
+  tag: 3.2.2
 
 config:
   inputs: |
