@@ -1,6 +1,6 @@
 image:
   repository: fluent/fluent-bit
-  tag: 3.2.2
+  tag: 2.1.10
 
 config:
   inputs: |
