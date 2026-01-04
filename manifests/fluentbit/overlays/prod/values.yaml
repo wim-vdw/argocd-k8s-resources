@@ -6,6 +6,10 @@ resources:
     memory: 50Mi
     cpu: 50m
 
+env:
+- name: FLB_JEMALLOC
+  value: "off"
+
 config:
   inputs: |
     [INPUT]
