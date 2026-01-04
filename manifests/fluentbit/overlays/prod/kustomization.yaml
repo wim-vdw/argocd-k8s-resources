@@ -5,7 +5,7 @@ resources:
 - namespace.yaml
 
 helmCharts:
-- name: fluent/fluent-bit
+- name: fluent-bit
   repo: https://fluent.github.io/helm-charts
   version: 0.54.0
   releaseName: fluentbit
