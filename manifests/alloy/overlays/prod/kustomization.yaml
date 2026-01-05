@@ -12,3 +12,10 @@ helmCharts:
   version: 1.5.1
   releaseName: alloy
   namespace: alloy
+
+configMapGenerator:
+- name: alloy
+  files:
+  - config.alloy
+  options:
+    disableNameSuffixHash: true
