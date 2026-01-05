@@ -13,13 +13,7 @@ discovery.kubernetes "pod" {
 
 loki.source.kubernetes "pod_logs" {
   targets    = discovery.kubernetes.pod.targets
-  forward_to = [loki.process.stdout.receiver]
+  forward_to = [loki.echo.stdout.receiver]
 }
 
-loki.process "stdout" {
-  stage.output {
-    source = ""
-  }
-
-  forward_to = []
-}
+loki.echo "stdout" {}
