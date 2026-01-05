@@ -10,3 +10,10 @@ discovery.kubernetes "pod" {
     names = ["argocd"]
   }
 }
+
+loki.source.kubernetes "pod_logs" {
+  targets    = discovery.kubernetes.pod.targets
+  forward_to = [logging.write.stdout.receiver]
+}
+
+logging.write "stdout" {}
