@@ -7,7 +7,7 @@ discovery.kubernetes "pod" {
   role = "pod"
 
   namespaces {
-    names = ["argocd"]
+    names = ["test01"]
   }
 }
 
