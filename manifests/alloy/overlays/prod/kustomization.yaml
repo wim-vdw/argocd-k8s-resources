@@ -20,3 +20,13 @@ configMapGenerator:
   - config.alloy
   options:
     disableNameSuffixHash: true
+
+patches:
+- target:
+    kind: DaemonSet
+    name: alloy
+  patch: |-
+    - op: add
+      path: /metadata/annotations
+      value:
+        configmap.reloader.stakater.com/reload: "alloy-config"
