@@ -16,5 +16,4 @@ loki.source.kubernetes "pod_logs" {
   forward_to = [loki.echo.stdout.receiver]
 }
 
-
 loki.echo "stdout" {}
