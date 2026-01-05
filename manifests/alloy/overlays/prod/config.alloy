@@ -2,3 +2,11 @@ logging {
   level = "info"
   format = "logfmt"
 }
+
+discovery.kubernetes "pod" {
+  role = "pod"
+
+  namespaces {
+    role = ["argocd"]
+  }
+}
