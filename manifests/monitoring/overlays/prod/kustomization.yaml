@@ -13,4 +13,5 @@ helmCharts:
   version: 80.12.1
   releaseName: kube-prometheus-stack
   namespace: monitoring
+  includeCRDs: true
   valuesFile: values.yaml
