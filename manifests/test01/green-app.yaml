@@ -12,16 +12,23 @@ data:
         <title>Green application</title>
         <style>
             body {
-                width: 35em;
-                margin: 0 auto;
+                min-height: 100vh;
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 font-family: Tahoma, Verdana, Arial, sans-serif;
                 background-color: green;
                 color: white;
             }
+            h1 {
+                text-align: center;
+                padding: 1em;
+            }
         </style>
     </head>
     <body>
-    <h1 style="text-align: center">Welcome to the Green Application</h1>
+    <h1>Welcome to the Green Application</h1>
     </body>
     </html>
 ---
