@@ -13,6 +13,7 @@ data:
     import sys
     import time
     from datetime import datetime
+    from prometheus_client import start_http_server, Gauge
     
     
     class JsonFormatter(logging.Formatter):
@@ -32,6 +33,7 @@ data:
         handler.setFormatter(JsonFormatter())
         logger.addHandler(handler)
         logger.setLevel(logging.INFO)
+        g = Gauge('redis_test_response_ms', 'Redis response time', ['action'])
 
         redis_master = redis.Redis(host='redis-master',
                                    port=6379,
@@ -53,7 +55,7 @@ data:
                     logger.info(f'Cache hit => {name}')
                     end = time.perf_counter_ns()
                     response_time_ms = (end - start) / 1_000_000
-                    logger.warning(f'Response time => {response_time_ms}')
+                    g.labels('read').set(response_time_ms)
                 else:
                     # Store in cache (write to master).
                     name = 'Wim Van den Wyngaert'
@@ -61,10 +63,10 @@ data:
                     logger.warning(f'Cache updated with => {name}')
                     end = time.perf_counter_ns()
                     response_time_ms = (end - start) / 1_000_000
-                    logger.warning(f'Response time => {response_time_ms}')
+                    g.labels('update').set(response_time_ms)
             except redis.exceptions.ConnectionError as error:
                 logger.error(error)
                 end = time.perf_counter_ns()
                 response_time_ms = (end - start) / 1_000_000
-                logger.warning(f'Response time => {response_time_ms}')
+                g.labels('error').set(response_time_ms)
             time.sleep(10)
