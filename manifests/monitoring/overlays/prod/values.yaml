@@ -1,3 +1,6 @@
+grafana:
+  operator:
+    defaultDashboardsTimezone: Europe/Brussels
 prometheusOperator:
   admissionWebhooks:
     enabled: false
