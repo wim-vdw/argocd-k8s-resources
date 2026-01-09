@@ -30,6 +30,9 @@ spec:
         - sh
         - -c
         - echo 'Install Python dependencies:' && pip install redis prometheus-client && python /app/main.py
+        ports:
+          - containerPort: 8000
+            name: metrics
         volumeMounts:
         - name: script-volume
           mountPath: /app
