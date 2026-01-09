@@ -45,7 +45,9 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: test-deployment-service
+  name: test-redis-service
+  labels:
+    app: test-redis-service
 spec:
   selector:
     app: test
