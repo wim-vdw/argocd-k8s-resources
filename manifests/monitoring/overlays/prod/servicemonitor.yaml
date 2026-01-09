@@ -1,0 +1,17 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: test-redis-monitor
+  labels:
+    app: test
+spec:
+  namespaceSelector:
+    matchNames:
+    - redis
+  selector:
+    matchLabels:
+      app: test
+  endpoints:
+  - port: metrics
+    interval: 15s
+    path: /metrics
