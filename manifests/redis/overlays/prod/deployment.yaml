@@ -29,7 +29,7 @@ spec:
         command:
         - sh
         - -c
-        - echo 'Install Python dependencies:' && pip install redis && python /app/main.py
+        - echo 'Install Python dependencies:' && pip install redis prometheus-client && python /app/main.py
         volumeMounts:
         - name: script-volume
           mountPath: /app
