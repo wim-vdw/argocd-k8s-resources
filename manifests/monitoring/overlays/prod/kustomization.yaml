@@ -9,3 +9,11 @@ resources:
 - ingress.yaml
 - servicemonitor.yaml
 
+helmCharts:
+- name: kube-prometheus-stack
+  repo: https://prometheus-community.github.io/helm-charts
+  version: 80.12.1
+  releaseName: kube-prometheus-stack
+  namespace: monitoring
+  includeCRDs: true
+  valuesFile: values.yaml
