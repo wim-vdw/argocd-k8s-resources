@@ -3,7 +3,7 @@ grafana:
   persistence:
     enabled: true
     storageClassName: longhorn-monitoring
-    size: 5Gi
+    size: 10Gi
 
 prometheus:
   prometheusSpec:
@@ -15,7 +15,7 @@ prometheus:
           - ReadWriteOnce
           resources:
             requests:
-              storage: 10Gi
+              storage: 25Gi
 
 prometheusOperator:
   admissionWebhooks:
