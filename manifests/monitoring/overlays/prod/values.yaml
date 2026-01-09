@@ -1,6 +1,22 @@
 grafana:
-  operator:
-    defaultDashboardsTimezone: Europe/Brussels
+  defaultDashboardsTimezone: Europe/Brussels
+  persistence:
+    enabled: true
+    storageClassName: longhorn-monitoring
+    size: 5Gi
+
+prometheus:
+  prometheusSpec:
+    storageSpec:
+      volumeClaimTemplate:
+        spec:
+          storageClassName: longhorn-monitoring
+          accessModes:
+          - ReadWriteOnce
+          resources:
+            requests:
+              storage: 10Gi
+
 prometheusOperator:
   admissionWebhooks:
     enabled: false
@@ -8,6 +24,7 @@ prometheusOperator:
       enabled: false
   tls:
     enabled: false
+
 prometheus-node-exporter:
   tolerations:
   - key: "CriticalAddonsOnly"
