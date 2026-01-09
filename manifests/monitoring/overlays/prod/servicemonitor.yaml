@@ -13,13 +13,3 @@ spec:
   - port: metrics
     interval: 15s
     path: /metrics
----
-apiVersion: monitoring.coreos.com/v1
-kind: Prometheus
-metadata:
-  name: test-redis-monitor
-spec:
-  serviceAccountName: kube-prometheus-stack-prometheus
-  serviceMonitorSelector:
-    matchLabels:
-      app: test
