@@ -32,7 +32,7 @@ patches:
       name: redis-master
       annotations:
         tailscale.com/expose: "true"
-        tailscale.com/hostname: "redis-master"
+        tailscale.com/hostname: "redis-master-raspberrypi"
 # Annotate Service to be exposed via Tailscale
 - target:
     version: v1
@@ -45,4 +45,4 @@ patches:
       name: redis-replicas
       annotations:
         tailscale.com/expose: "true"
-        tailscale.com/hostname: "redis-replicas"
+        tailscale.com/hostname: "redis-replicas-raspberrypi"
