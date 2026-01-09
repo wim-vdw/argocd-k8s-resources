@@ -45,26 +45,26 @@ data:
                                     decode_responses=True)
         
         while True:
-            start = time.perf_counter()
+            start = time.perf_counter_ns()
             try:
                 # Try reading from Redis replica.
                 name = redis_replica.get('name')
                 if name:
                     logger.info(f'Cache hit => {name}')
-                    end = time.perf_counter()
-                    response_time_ms = (end - start) * 1000
+                    end = time.perf_counter_ns()
+                    response_time_ms = (end - start) / 1_000_000
                     logger.warning(f'Response time => {response_time_ms}')
                 else:
                     # Store in cache (write to master).
                     name = 'Wim Van den Wyngaert'
                     redis_master.setex('name', 300, name)  # TTL 5 min
                     logger.warning(f'Cache updated with => {name}')
-                    end = time.perf_counter()
-                    response_time_ms = (end - start) * 1000
+                    end = time.perf_counter_ns()
+                    response_time_ms = (end - start) / 1_000_000
                     logger.warning(f'Response time => {response_time_ms}')
             except redis.exceptions.ConnectionError as error:
                 logger.error(error)
-                end = time.perf_counter()
-                response_time_ms = (end - start) * 1000
+                end = time.perf_counter_ns()
+                response_time_ms = (end - start) / 1_000_000
                 logger.warning(f'Response time => {response_time_ms}')
             time.sleep(10)
