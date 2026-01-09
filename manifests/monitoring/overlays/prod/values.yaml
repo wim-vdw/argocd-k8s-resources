@@ -8,3 +8,8 @@ prometheusOperator:
       enabled: false
   tls:
     enabled: false
+prometheus-node-exporter:
+  tolerations:
+  - key: "CriticalAddonsOnly"
+    operator: "Exists"
+    effect: "NoExecute"
