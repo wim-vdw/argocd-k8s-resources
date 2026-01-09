@@ -45,7 +45,9 @@ data:
                                     db=0,
                                     password=os.getenv('REDIS_PASSWORD'),
                                     decode_responses=True)
-        
+
+        start_http_server(8000)
+    
         while True:
             start = time.perf_counter_ns()
             try:
