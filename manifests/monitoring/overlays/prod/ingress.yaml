@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: grafana-tailscale
+  name: grafana-raspberrypi-tailscale
   annotations:
     tailscale.com/funnel: "false"
 spec:
@@ -18,12 +18,12 @@ spec:
               number: 80
   tls:
   - hosts:
-    - grafana
+    - grafana-raspberrypi
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: prometheus-tailscale
+  name: prometheus-raspberrypi-tailscale
   annotations:
     tailscale.com/funnel: "false"
 spec:
@@ -40,4 +40,4 @@ spec:
               number: 9090
   tls:
   - hosts:
-    - prometheus
+    - prometheus-raspberrypi
