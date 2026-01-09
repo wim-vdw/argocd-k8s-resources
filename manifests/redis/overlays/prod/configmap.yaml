@@ -69,6 +69,4 @@ data:
             except redis.exceptions.ConnectionError as error:
                 logger.error(error)
                 end = time.perf_counter_ns()
-                response_time_ms = (end - start) / 1_000_000
-                g.labels('error').set(response_time_ms)
             time.sleep(10)
