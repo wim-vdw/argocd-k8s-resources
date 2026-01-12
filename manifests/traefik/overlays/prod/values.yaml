@@ -3,3 +3,6 @@ service:
 ingressRoute:
   dashboard:
     enabled: true
+    matchRule: Host(`raspberrypi5.localhost`)
+    entryPoints:
+    - web
