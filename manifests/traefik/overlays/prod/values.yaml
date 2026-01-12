@@ -1,0 +1,14 @@
+ingressRoute:
+  dashboard:
+    enabled: true
+    matchRule: Host(`raspberrypi5`)
+    entryPoints:
+    - web
+providers:
+  kubernetesGateway:
+    enabled: true
+gateway:
+  listeners:
+    web:
+      namespacePolicy:
+        from: All
