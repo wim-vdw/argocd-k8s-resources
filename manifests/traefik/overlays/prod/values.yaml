@@ -1,7 +1,7 @@
 ingressRoute:
   dashboard:
     enabled: true
-    matchRule: Host(`raspberrypi5`)
+    matchRule: Host(`raspberrypi5.local`)
     entryPoints:
     - web
 providers:
