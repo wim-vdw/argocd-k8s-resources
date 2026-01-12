@@ -43,24 +43,24 @@ spec:
 #            name: blue-svc
 #            port:
 #              number: 80
-#---
-#apiVersion: networking.k8s.io/v1
-#kind: Ingress
-#metadata:
-#  name: blue
-#spec:
-#  ingressClassName: nginx
-#  rules:
-#  - host: blue-app.192.168.1.10.sslip.io
-#    http:
-#      paths:
-#      - path: /
-#        pathType: Prefix
-#        backend:
-#          service:
-#            name: blue-svc
-#            port:
-#              number: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: blue
+spec:
+  ingressClassName: traefik
+  rules:
+  - host: blue-app.192.168.1.5.sslip.io
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: blue-svc
+            port:
+              number: 80
 #---
 #apiVersion: networking.k8s.io/v1
 #kind: Ingress
