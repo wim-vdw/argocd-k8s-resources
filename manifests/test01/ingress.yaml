@@ -27,7 +27,7 @@ metadata:
 spec:
   ingressClassName: traefik
   rules:
-  - host: blue-app.192.168.1.5.sslip.io
+  - host: blue-app.192.168.1.10.sslip.io
     http:
       paths:
       - path: /
@@ -45,7 +45,7 @@ metadata:
 spec:
   ingressClassName: traefik
   rules:
-  - host: green-app.192.168.1.5.sslip.io
+  - host: green-app.192.168.1.10.sslip.io
     http:
       paths:
       - path: /
