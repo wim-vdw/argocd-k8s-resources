@@ -5,10 +5,9 @@ ingressRoute:
     entryPoints:
     - web
 
+ingressClass:
+  isDefaultClass: false
+
 logs:
   access:
     enabled: true
-
-ingressClass:
-  enabled:
-  isDefaultClass: false
