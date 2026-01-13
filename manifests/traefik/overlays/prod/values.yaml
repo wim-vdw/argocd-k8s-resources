@@ -8,7 +8,6 @@ ingressRoute:
 logs:
   access:
     enabled: true
-
 ingressClass:
   enabled:
   isDefaultClass: false
