@@ -1,5 +1,9 @@
 controller:
   service:
     loadBalancerIP: 192.168.1.20
+  httpPort:
+    nodePort: 30080
+  httpsPort:
+    nodePort: 30443
   ingressClass:
     name: nginx-ingress
