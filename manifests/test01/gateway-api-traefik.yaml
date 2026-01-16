@@ -28,7 +28,7 @@ spec:
         value: /green
     filters:
     - type: URLRewrite
-      URLRewrite:
+      urlRewrite:
         path:
           type: ReplaceFullPath
           replaceFullPath: /
