@@ -26,6 +26,9 @@ spec:
     - path:
         type: PathPrefix
         value: /green
+    - path:
+        type: PathPrefix
+        value: /groen
     filters:
     - type: URLRewrite
       urlRewrite:
