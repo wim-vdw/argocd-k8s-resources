@@ -4,3 +4,17 @@ metadata:
   name: traefik
 spec:
   controllerName: traefik.io/gateway-controller
+---
+apiVersion: gateway.networking.k8s.io/v1
+kind: Gateway
+metadata:
+  name: test-web
+spec:
+  gatewayClassName: traefik
+  listeners:
+  - protocol: HTTP
+    port: 80
+    name: test-web-gw
+    allowedRoutes:
+      namespaces:
+        from: Same
