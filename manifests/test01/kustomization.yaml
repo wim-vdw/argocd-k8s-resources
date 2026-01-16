@@ -11,6 +11,7 @@ resources:
 #- cert-manager-issuers.yaml
 #- keda-scaled-object.yaml
 - cluster-info.yaml
+- gateway-api-traefik.yaml
 
 labels:
 - pairs:
