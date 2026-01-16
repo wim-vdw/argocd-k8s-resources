@@ -27,16 +27,11 @@ spec:
         type: PathPrefix
         value: /green
     filters:
-    - type: RequestRedirect
-      requestRedirect:
+    - type: URLRewrite
+      URLRewrite:
         path:
           type: ReplaceFullPath
           replaceFullPath: /
-        statusCode: 302
-  - matches:
-    - path:
-        type: PathPrefix
-        value: /green
     backendRefs:
     - name: green-svc
       port: 80
