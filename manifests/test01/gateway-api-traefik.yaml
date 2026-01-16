@@ -26,6 +26,13 @@ spec:
     - path:
         type: PathPrefix
         value: /green
+    filters:
+    - type: RequestRedirect
+      requestRedirect:
+        path:
+          type: ReplaceFullPath
+          replaceFullPath: /
+        statusCode: 302
     backendRefs:
     - name: green-svc
       port: 80
