@@ -22,6 +22,10 @@ spec:
   hostnames:
   - "raspberrypi5.tail858f03.ts.net"
   rules:
-  - backendRefs:
+  - matches:
+    - path:
+        type: PathPrefix
+        value: /green
+    backendRefs:
     - name: green-svc
       port: 80
