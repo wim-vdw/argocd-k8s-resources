@@ -34,7 +34,7 @@ spec:
       urlRewrite:
         path:
           type: ReplacePrefixMatch
-          replaceFullPath: /
+          replacePrefixMatch: /
     backendRefs:
     - name: green-svc
       port: 80
@@ -50,7 +50,7 @@ spec:
       urlRewrite:
         path:
           type: ReplacePrefixMatch
-          replaceFullPath: /
+          replacePrefixMatch: /
     backendRefs:
     - name: blue-svc
       port: 80
