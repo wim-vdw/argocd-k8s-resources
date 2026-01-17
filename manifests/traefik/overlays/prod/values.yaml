@@ -7,7 +7,7 @@ service:
 ingressRoute:
   dashboard:
     enabled: true
-    matchRule: Host(`raspberrypi5.local`)
+    matchRule: Host(`dashboard.192.168.1.10.sslip.io`)
     entryPoints:
     - web
 
