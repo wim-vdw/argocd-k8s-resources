@@ -54,3 +54,10 @@ spec:
     backendRefs:
     - name: blue-svc
       port: 80
+  - matches:
+    - path:
+        type: PathPrefix
+        value: /
+    backendRefs:
+    - name: blue-svc
+      port: 80
