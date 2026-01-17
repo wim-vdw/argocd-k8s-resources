@@ -41,7 +41,7 @@ spec:
   - matches:
     - path:
         type: PathPrefix
-        value: /bleu
+        value: /blue
     - path:
         type: PathPrefix
         value: /blauw
@@ -52,5 +52,5 @@ spec:
           type: ReplaceFullPath
           replaceFullPath: /
     backendRefs:
-    - name: bleu-svc
+    - name: blue-svc
       port: 80
