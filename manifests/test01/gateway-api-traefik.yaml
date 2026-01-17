@@ -38,3 +38,19 @@ spec:
     backendRefs:
     - name: green-svc
       port: 80
+  - matches:
+    - path:
+        type: PathPrefix
+        value: /bleu
+    - path:
+        type: PathPrefix
+        value: /blauw
+    filters:
+    - type: URLRewrite
+      urlRewrite:
+        path:
+          type: ReplaceFullPath
+          replaceFullPath: /
+    backendRefs:
+    - name: bleu-svc
+      port: 80
