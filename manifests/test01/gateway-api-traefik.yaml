@@ -21,6 +21,7 @@ spec:
   - name: test-gateway
   hostnames:
   - "raspberrypi5.tail858f03.ts.net"
+  - "blue-green.192.168.1.10.sslip.io"
   rules:
   - matches:
     - path:
