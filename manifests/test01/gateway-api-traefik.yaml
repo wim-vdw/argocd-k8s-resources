@@ -21,7 +21,7 @@ spec:
   - name: test-gateway
   hostnames:
   - "blue-green.192.168.1.10.sslip.io"
-  - "ingress.home"
+  - "blue-green.home"
   rules:
   - matches:
     - path:
