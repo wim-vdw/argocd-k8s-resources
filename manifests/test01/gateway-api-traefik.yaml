@@ -8,7 +8,7 @@ spec:
   - protocol: HTTP
     port: 8000
     name: http
-    hostname: "blue-green.192.168.1.10.sslip.io"
+    hostname: "raspberrypi5.tail858f03.ts.net"
     allowedRoutes:
       namespaces:
         from: Same
