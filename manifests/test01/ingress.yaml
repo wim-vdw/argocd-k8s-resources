@@ -43,7 +43,7 @@ kind: Ingress
 metadata:
   name: green
 spec:
-  ingressClassName: nginx-ingress
+  ingressClassName: nginx
   rules:
   - host: green-app.192.168.1.20.sslip.io
     http:
