@@ -9,7 +9,7 @@ resources:
 helmCharts:
 - name: nginx-ingress
   repo: oci://ghcr.io/nginx/charts
-  version: 2.4.2
+  version: 2.4.3
   releaseName: nginx-ingress
   namespace: nginx-ingress
   includeCRDs: true
