@@ -5,4 +5,4 @@ namespace: reloader
 
 resources:
 - namespace.yaml
-- https://raw.githubusercontent.com/stakater/Reloader/v1.4.11/deployments/kubernetes/reloader.yaml
+- https://raw.githubusercontent.com/stakater/Reloader/v1.4.13/deployments/kubernetes/reloader.yaml
