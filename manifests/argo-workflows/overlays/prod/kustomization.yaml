@@ -5,5 +5,5 @@ namespace: argo
 
 resources:
 - namespace.yaml
-- role-ui-user-read-only.yaml
+- rbac.yaml
 - https://github.com/argoproj/argo-workflows/releases/download/v4.0.1/install.yaml

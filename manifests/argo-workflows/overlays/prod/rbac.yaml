@@ -1,3 +1,8 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: ui
+---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
@@ -34,3 +39,24 @@ rules:
   - get
   - list
   - watch
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: argo-ui-role
+subjects:
+- kind: ServiceAccount
+  name: ui
+  namespace: argo
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: role-ui-user-read-only
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: ui-secret
+  annotations:
+    kubernetes.io/service-account.name: ui
+type: kubernetes.io/service-account-token
