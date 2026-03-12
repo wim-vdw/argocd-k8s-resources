@@ -13,7 +13,7 @@ resources:
 helmCharts:
 - name: redis
   repo: https://charts.bitnami.com/bitnami
-  version: 24.1.2
+  version: 25.3.2
   releaseName: redis
   namespace: redis
   includeCRDs: true
