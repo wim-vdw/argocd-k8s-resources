@@ -31,6 +31,13 @@ spec:
       containers:
       - name: simple-container
         image: wimvandenwyngaert/test:2.4.0
+        command:
+        - /bin/sh
+        - -c
+        - sleep infinity
+        env:
+        - name: TZ
+          value: "Europe/Brussels"
         volumeMounts:
         - name: data-volume
           mountPath: /data
