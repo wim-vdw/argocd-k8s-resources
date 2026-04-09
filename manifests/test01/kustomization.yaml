@@ -12,6 +12,7 @@ resources:
 #- keda-scaled-object.yaml
 - cluster-info.yaml
 - gateway-api-traefik.yaml
+- statefulset.yaml
 
 labels:
 - pairs:
