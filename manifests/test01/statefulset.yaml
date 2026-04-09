@@ -28,7 +28,7 @@ metadata:
   name: simple-statefulset
 spec:
   serviceName: "simple-service"
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: simple-app
