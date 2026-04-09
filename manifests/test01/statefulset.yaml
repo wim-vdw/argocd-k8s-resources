@@ -12,3 +12,34 @@ parameters:
   fromBackup: ""
   fsType: "ext4"
 reclaimPolicy: Delete
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: simple-statefulset
+spec:
+  serviceName: "simple-service"
+  replicas: 1
+  selector:
+    matchLabels:
+      app: simple-app
+  template:
+    metadata:
+      labels:
+        app: simple-app
+    spec:
+      containers:
+      - name: simple-container
+        image: wimvandenwyngaert/test:2.4.0
+        volumeMounts:
+        - name: data-volume
+          mountPath: /data
+  volumeClaimTemplates:
+  - metadata:
+      name: data-volume
+    spec:
+      accessModes: ["ReadWriteOnce"]
+      storageClassName: statefulset-sc
+      resources:
+        requests:
+          storage: 1Gi
