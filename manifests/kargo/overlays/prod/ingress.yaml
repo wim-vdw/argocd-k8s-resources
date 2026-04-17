@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: kargo-raspberrypi-tailscale
   annotations:
-    tailscale.com/funnel: "false"
+    tailscale.com/funnel: "true"
 spec:
   ingressClassName: tailscale
   rules:
