@@ -3,6 +3,9 @@ kind: Kustomization
 
 namespace: cert-manager
 
+resources:
+- namespace.yaml
+
 helmCharts:
 - name: cert-manager
   repo: oci://quay.io/jetstack/charts
