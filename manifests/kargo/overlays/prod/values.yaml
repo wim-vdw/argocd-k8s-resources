@@ -1,3 +1,5 @@
 api:
   secret:
     name: kargo-admin-account
+  ingress:
+    enabled: true
