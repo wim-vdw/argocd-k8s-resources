@@ -8,7 +8,7 @@ resources:
 
 helmCharts:
 - name: kargo
-  repo: ghcr.io/akuity/kargo-charts
+  repo: oci://ghcr.io/akuity/kargo-charts
   version: 1.10.0
   releaseName: kargo
   namespace: kargo
