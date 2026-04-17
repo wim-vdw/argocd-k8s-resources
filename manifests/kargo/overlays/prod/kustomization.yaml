@@ -7,3 +7,11 @@ resources:
 - namespace.yaml
 - sealedsecret.yaml
 
+helmCharts:
+- name: kargo
+  repo: oci://ghcr.io/akuity/kargo-charts
+  version: 1.10.0
+  releaseName: kargo
+  namespace: kargo
+  includeCRDs: true
+  valuesFile: values.yaml

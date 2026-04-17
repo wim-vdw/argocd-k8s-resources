@@ -1,0 +1,3 @@
+api:
+  secret:
+    name: kargo-admin-account
