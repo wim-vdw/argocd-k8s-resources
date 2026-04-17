@@ -1,4 +1,5 @@
 api:
+  host: kargo-raspberrypi
   secret:
     name: kargo-admin-account
   tls:

@@ -15,7 +15,7 @@ spec:
           service:
             name: kargo-api
             port:
-              name: https
+              name: http
   tls:
   - hosts:
     - kargo-raspberrypi
