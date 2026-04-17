@@ -5,6 +5,7 @@ namespace: kargo
 
 resources:
 - namespace.yaml
+- sealedsecret.yaml
 
 helmCharts:
 - name: kargo
