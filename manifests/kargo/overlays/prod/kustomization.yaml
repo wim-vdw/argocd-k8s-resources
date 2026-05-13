@@ -11,7 +11,7 @@ resources:
 helmCharts:
 - name: kargo
   repo: oci://ghcr.io/akuity/kargo-charts
-  version: 1.10.1
+  version: 1.10.3
   releaseName: kargo
   namespace: kargo
   includeCRDs: true
