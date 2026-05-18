@@ -13,6 +13,7 @@ resources:
 - cluster-info.yaml
 - gateway-api-traefik.yaml
 - statefulset.yaml
+- rsyc-test.yaml
 
 labels:
 - pairs:
