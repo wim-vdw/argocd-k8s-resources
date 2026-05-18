@@ -76,7 +76,7 @@ spec:
           name: app-config
       containers:
       - name: blue-server
-        image: nginx:1.31-alpine
+        image: nginx:1.31.0-alpine
         env:
         - name: TZ
           value: Europe/Brussels
