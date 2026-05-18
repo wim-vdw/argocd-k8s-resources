@@ -13,3 +13,42 @@ parameters:
   fsType: "ext4"
 reclaimPolicy: Delete
 ---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: rsync-test-pvc
+spec:
+  accessModes:
+  - ReadWriteMany
+  storageClassName: rsync-test-sc
+  resources:
+    requests:
+      storage: 1Gi
+---
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rsync-test
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rsync-test
+  template:
+    metadata:
+      labels:
+        app: rsync-test
+    spec:
+      containers:
+      - name: rsync-test
+        image: wimvandenwyngaert/test:2.14.0
+        volumeMounts:
+        - name: data
+          mountPath: /data
+      volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: rsync-test-pvc
