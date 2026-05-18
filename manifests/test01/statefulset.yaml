@@ -39,7 +39,7 @@ spec:
     spec:
       containers:
       - name: simple-container
-        image: wimvandenwyngaert/test:2.4.0
+        image: wimvandenwyngaert/test:2.14.0
         command:
         - /bin/sh
         - -c
