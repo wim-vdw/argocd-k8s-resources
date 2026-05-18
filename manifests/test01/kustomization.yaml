@@ -23,7 +23,3 @@ labels:
     app.kubernetes.io/part-of: blue-green
 
 buildMetadata: [managedByLabel]
-
-images:
-- name: nginx
-  newTag: 1.29.3-alpine
