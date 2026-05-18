@@ -45,6 +45,10 @@ spec:
       containers:
       - name: rsync-test
         image: wimvandenwyngaert/test:2.14.0
+        command:
+        - /bin/sh
+        - -c
+        - sleep infinity
         volumeMounts:
         - name: data
           mountPath: /data
