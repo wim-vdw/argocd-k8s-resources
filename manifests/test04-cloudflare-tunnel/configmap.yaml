@@ -22,7 +22,7 @@ data:
                 color: white;
             }
             
-            h1 {
+            h2 {
                 text-align: center;
                 padding: 1em;
             }
