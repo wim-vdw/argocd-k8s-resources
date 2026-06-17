@@ -5,3 +5,4 @@ namespace: test04
 
 resources:
 - namespace.yaml
+- deployment.yaml
