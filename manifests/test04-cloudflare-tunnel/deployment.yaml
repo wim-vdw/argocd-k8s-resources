@@ -1,20 +1,33 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: httpbin-deployment
+  name: cloudflare-tunnel-deployment
+  labels:
+    app: cloudflare-tunnel
+  annotations:
+    configmap.reloader.stakater.com/reload: "cloudflare-tunnel-config"
 spec:
-  replicas: 2
   selector:
     matchLabels:
-      app: httpbin
+      run: cloudflare-tunnel
+  replicas: 3
   template:
     metadata:
       labels:
-        app: httpbin
+        run: cloudflare-tunnel
     spec:
+      volumes:
+      - name: app-config
+        configMap:
+          name: cloudflare-tunnel-config
       containers:
-        - name: httpbin
-          image: kennethreitz/httpbin:latest
-          imagePullPolicy: IfNotPresent
-          ports:
-            - containerPort: 80
+      - name: cloudflare-tunnel-server
+        image: nginx:1.31.0-alpine
+        env:
+        - name: TZ
+          value: Europe/Brussels
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - mountPath: /usr/share/nginx/html
+          name: app-config
