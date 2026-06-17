@@ -22,7 +22,7 @@ spec:
           name: cloudflare-tunnel-config
       containers:
       - name: cloudflare-tunnel-server
-        image: nginx:1.31.0-alpine
+        image: nginx:1.31.1-alpine
         env:
         - name: TZ
           value: Europe/Brussels
