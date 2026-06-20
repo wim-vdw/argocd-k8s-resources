@@ -29,6 +29,6 @@ data:
         </style>
     </head>
     <body>
-    <h2>Welcome to my Kubernetes Cluster. Protected by Cloudflare, caffeine, and questionable life choices. If you're here to DDoS me, you're probably having a conversation with Cloudflare instead.</h2>
+    <h2>Cloudflare Tunnel Test — Everything is working!</h2>
     </body>
     </html>
