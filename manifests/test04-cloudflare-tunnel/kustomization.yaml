@@ -16,5 +16,4 @@ helmCharts:
   repo: https://stefanprodan.github.io/podinfo
   version: 6.14.0
   releaseName: podinfo
-#  includeCRDs: true
   valuesFile: values.yaml
