@@ -9,4 +9,4 @@ spec:
   - port: 80
     protocol: TCP
   selector:
-    run: cloudflare-tunnel
+    app.kubernetes.io/name: podinfo
