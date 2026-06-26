@@ -6,7 +6,7 @@ metadata:
     app: cloudflare-tunnel
 spec:
   ports:
-  - port: 9898
+  - port: 80
     protocol: TCP
   selector:
-    app.kubernetes.io/name: podinfo
+    run: cloudflare-tunnel
