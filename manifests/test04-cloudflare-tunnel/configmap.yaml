@@ -9,7 +9,7 @@ data:
     <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width"/>
-        <title>Cloudflare Tunnel</title>
+        <title>Cloudflare Tunnel Test</title>
         <style>
             body {
                 min-height: 100vh;
@@ -29,6 +29,6 @@ data:
         </style>
     </head>
     <body>
-    <h2>Cloudflare Tunnel Test — Everything is working!</h2>
+    <h2>Cloudflare Tunnel Test</h2>
     </body>
     </html>
