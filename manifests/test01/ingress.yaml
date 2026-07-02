@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: bluegreen-raspberrypi-tailscale
   annotations:
-    tailscale.com/funnel: "true"
+    tailscale.com/funnel: "false"
 spec:
   ingressClassName: tailscale
   rules:
