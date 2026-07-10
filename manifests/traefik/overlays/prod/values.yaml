@@ -24,6 +24,5 @@ gateway:
       namespacePolicy:
         from: All
 
-logs:
-  access:
-    enabled: true
+accessLog:
+  enabled: true
