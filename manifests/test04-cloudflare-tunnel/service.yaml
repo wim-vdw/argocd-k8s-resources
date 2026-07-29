@@ -16,6 +16,7 @@ kind: Service
 metadata:
   name: podinfo-grpc
   annotations:
+    tailscale.com/expose: "true"
     tailscale.com/hostname: podinfo-grpc
 spec:
   selector:
