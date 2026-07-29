@@ -10,3 +10,17 @@ spec:
     protocol: TCP
   selector:
     run: cloudflare-tunnel
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: podinfo-grpc
+  annotations:
+    tailscale.com/hostname: podinfo-grpc
+spec:
+  selector:
+    app.kubernetes.io/name: podinfo
+  ports:
+  - name: grpc
+    port: 9999
+    targetPort: 9999
