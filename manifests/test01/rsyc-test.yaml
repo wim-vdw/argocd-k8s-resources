@@ -61,6 +61,10 @@ spec:
           runAsGroup: 10001
           allowPrivilegeEscalation: false
           readOnlyRootFilesystem: true
+          capabilities:
+            drop: ["ALL"]
+          seccompProfile:
+            type: RuntimeDefault
       volumes:
       - name: data
         persistentVolumeClaim:
@@ -101,6 +105,10 @@ spec:
               runAsGroup: 10001
               allowPrivilegeEscalation: false
               readOnlyRootFilesystem: true
+              capabilities:
+                drop: ["ALL"]
+              seccompProfile:
+                type: RuntimeDefault
           restartPolicy: OnFailure
           volumes:
           - name: data
