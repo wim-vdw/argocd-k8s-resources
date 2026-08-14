@@ -95,6 +95,12 @@ spec:
             volumeMounts:
             - name: data
               mountPath: /data
+            securityContext:
+              runAsNonRoot: true
+              runAsUser: 10001
+              runAsGroup: 10001
+              allowPrivilegeEscalation: false
+              readOnlyRootFilesystem: true
           restartPolicy: OnFailure
           volumes:
           - name: data
