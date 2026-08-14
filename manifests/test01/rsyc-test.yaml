@@ -78,7 +78,7 @@ spec:
         spec:
           containers:
           - name: rsync
-            image: wimvandenwyngaert/test:2.14.1
+            image: wimvandenwyngaert/test:3.0.0
             command:
             - /bin/sh
             - -c
