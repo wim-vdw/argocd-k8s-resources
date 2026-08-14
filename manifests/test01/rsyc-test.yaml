@@ -44,6 +44,7 @@ spec:
     spec:
       securityContext:
         fsGroup: 10001
+        fsGroupChangePolicy: OnRootMismatch
       containers:
       - name: rsync-test
         image: wimvandenwyngaert/test:3.0.0
