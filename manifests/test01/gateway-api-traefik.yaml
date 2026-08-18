@@ -8,7 +8,7 @@ spec:
   - protocol: HTTP
     port: 8000
     name: http
-    hostname: "argocd.local"
+    hostname: "blue-green.192.168.1.10.sslip.io"
     allowedRoutes:
       namespaces:
         from: Same
@@ -21,7 +21,7 @@ spec:
   parentRefs:
   - name: test-gateway
   hostnames:
-  - "argocd.local"
+  - "blue-green.192.168.1.10.sslip.io"
   rules:
   - matches:
     - path:
