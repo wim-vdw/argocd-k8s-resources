@@ -11,6 +11,7 @@ ingressClass:
 providers:
   kubernetesGateway:
     enabled: true
+    experimentalChannel: true
 
 gateway:
   listeners:
