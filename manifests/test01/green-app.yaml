@@ -57,7 +57,7 @@ spec:
           name: green-config
       containers:
       - name: green-server
-        image: nginx:1.31.3-alpine
+        image: nginx:1.31.4-alpine
         env:
         - name: TZ
           value: Europe/Brussels
