@@ -13,6 +13,17 @@ parameters:
   fsType: "ext4"
 reclaimPolicy: Delete
 ---
+apiVersion: v1
+kind: Service
+metadata:
+  name: simple-service
+  annotations:
+    argocd.argoproj.io/sync-wave: "-5"
+spec:
+  clusterIP: None
+  selector:
+    app: simple-app
+---
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
