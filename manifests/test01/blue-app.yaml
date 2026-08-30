@@ -3,6 +3,7 @@ kind: ConfigMap
 metadata:
   name: blue-config
 data:
+  test.txt: "This is a test file for the blue application."
   index.html: |
     <!doctype html>
     <html lang="">
