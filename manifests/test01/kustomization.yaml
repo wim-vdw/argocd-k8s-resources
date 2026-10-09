@@ -14,6 +14,7 @@ resources:
 - gateway-api-traefik.yaml
 - statefulset.yaml
 - rsyc-test.yaml
+- aarch64-assembly-test.yaml
 
 #labels:
 #- pairs:

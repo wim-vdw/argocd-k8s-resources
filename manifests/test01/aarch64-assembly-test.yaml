@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: aarch64-assembly-test
+spec:
+  schedule: "*/15 * * * *" # runs every 15 minutes
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+          - name: aarch64-assembly-test
+            image: wimvandenwyngaert/aarch64-assembly-test:1.0.0
