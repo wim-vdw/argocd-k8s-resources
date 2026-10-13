@@ -46,7 +46,7 @@ spec:
         fsGroupChangePolicy: OnRootMismatch
       containers:
       - name: rsync-test
-        image: wimvandenwyngaert/test:3.0.0
+        image: wimvandenwyngaert/test:3.0.1
         command:
         - /bin/sh
         - -c
@@ -84,7 +84,7 @@ spec:
             fsGroupChangePolicy: OnRootMismatch
           containers:
           - name: rsync
-            image: wimvandenwyngaert/test:3.0.0
+            image: wimvandenwyngaert/test:3.0.1
             command:
             - /bin/sh
             - -c
