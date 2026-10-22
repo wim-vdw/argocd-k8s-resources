@@ -74,7 +74,7 @@ kind: CronJob
 metadata:
   name: rsync-cronjob
 spec:
-  schedule: "*/15 * * * *" # runs every 15 minutes
+  schedule: "0 * * * *" # runs every hour
   jobTemplate:
     spec:
       template:
