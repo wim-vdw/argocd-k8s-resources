@@ -3,3 +3,7 @@ csi:
   provisionerReplicaCount: 1
   resizerReplicaCount: 1
   snapshotterReplicaCount: 1
+longhornGlobalManager:
+  replicas: 1
+longhornUI:
+  replicas: 1
