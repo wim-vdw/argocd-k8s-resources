@@ -45,7 +45,7 @@ spec:
   selector:
     matchLabels:
       run: green-app
-  replicas: 1
+  replicas: 2
   template:
     metadata:
       labels:

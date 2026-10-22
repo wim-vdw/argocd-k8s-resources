@@ -46,7 +46,7 @@ spec:
   selector:
     matchLabels:
       run: blue-app
-  replicas: 1
+  replicas: 2
   template:
     metadata:
       labels:
